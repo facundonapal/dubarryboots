@@ -1,0 +1,2592 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><script type="text/javascript">window.NREUM||(NREUM={}),__nr_require=function(e,n,t){function r(t){if(!n[t]){var o=n[t]={exports:{}};e[t][0].call(o.exports,function(n){var o=e[t][1][n];return r(o||n)},o,o.exports)}return n[t].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<t.length;o++)r(t[o]);return r}({1:[function(e,n,t){function r(){}function o(e,n,t){return function(){return i(e,[c.now()].concat(u(arguments)),n?null:this,t),n?void 0:this}}var i=e("handle"),a=e(3),u=e(4),f=e("ee").get("tracer"),c=e("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],d="api-",l=d+"ixn-";a(p,function(e,n){s[n]=o(d+n,!0,"api")}),s.addPageAction=o(d+"addPageAction",!0),s.setCurrentRouteName=o(d+"routeName",!0),n.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(e,n){var t={},r=this,o="function"==typeof n;return i(l+"tracer",[c.now(),e,t],r),function(){if(f.emit((o?"":"no-")+"fn-start",[c.now(),r,o],t),o)try{return n.apply(this,arguments)}catch(e){throw f.emit("fn-err",[arguments,this,e],t),e}finally{f.emit("fn-end",[c.now()],t)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,n){m[n]=o(l+n)}),newrelic.noticeError=function(e,n){"string"==typeof e&&(e=new Error(e)),i("err",[e,c.now(),!1,n])}},{}],2:[function(e,n,t){function r(e,n){if(!o)return!1;if(e!==o)return!1;if(!n)return!0;if(!i)return!1;for(var t=i.split("."),r=n.split("."),a=0;a<r.length;a++)if(r[a]!==t[a])return!1;return!0}var o=null,i=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var u=navigator.userAgent,f=u.match(a);f&&u.indexOf("Chrome")===-1&&u.indexOf("Chromium")===-1&&(o="Safari",i=f[1])}n.exports={agent:o,version:i,match:r}},{}],3:[function(e,n,t){function r(e,n){var t=[],r="",i=0;for(r in e)o.call(e,r)&&(t[i]=n(r,e[r]),i+=1);return t}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],4:[function(e,n,t){function r(e,n,t){n||(n=0),"undefined"==typeof t&&(t=e?e.length:0);for(var r=-1,o=t-n||0,i=Array(o<0?0:o);++r<o;)i[r]=e[n+r];return i}n.exports=r},{}],5:[function(e,n,t){n.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(e,n,t){function r(){}function o(e){function n(e){return e&&e instanceof r?e:e?f(e,u,i):i()}function t(t,r,o,i){if(!d.aborted||i){e&&e(t,r,o);for(var a=n(o),u=v(t),f=u.length,c=0;c<f;c++)u[c].apply(a,r);var p=s[y[t]];return p&&p.push([b,t,r,a]),a}}function l(e,n){h[e]=v(e).concat(n)}function m(e,n){var t=h[e];if(t)for(var r=0;r<t.length;r++)t[r]===n&&t.splice(r,1)}function v(e){return h[e]||[]}function g(e){return p[e]=p[e]||o(t)}function w(e,n){c(e,function(e,t){n=n||"feature",y[t]=n,n in s||(s[n]=[])})}var h={},y={},b={on:l,addEventListener:l,removeEventListener:m,emit:t,get:g,listeners:v,context:n,buffer:w,abort:a,aborted:!1};return b}function i(){return new r}function a(){(s.api||s.feature)&&(d.aborted=!0,s=d.backlog={})}var u="nr@context",f=e("gos"),c=e(3),s={},p={},d=n.exports=o();d.backlog=s},{}],gos:[function(e,n,t){function r(e,n,t){if(o.call(e,n))return e[n];var r=t();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,n,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return e[n]=r,r}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],handle:[function(e,n,t){function r(e,n,t,r){o.buffer([e],r),o.emit(e,n,t)}var o=e("ee").get("handle");n.exports=r,r.ee=o},{}],id:[function(e,n,t){function r(e){var n=typeof e;return!e||"object"!==n&&"function"!==n?-1:e===window?0:a(e,i,function(){return o++})}var o=1,i="nr@id",a=e("gos");n.exports=r},{}],loader:[function(e,n,t){function r(){if(!E++){var e=x.info=NREUM.info,n=l.getElementsByTagName("script")[0];if(setTimeout(s.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&n))return s.abort();c(y,function(n,t){e[n]||(e[n]=t)}),f("mark",["onload",a()+x.offset],null,"api");var t=l.createElement("script");t.src="https://"+e.agent,n.parentNode.insertBefore(t,n)}}function o(){"complete"===l.readyState&&i()}function i(){f("mark",["domContent",a()+x.offset],null,"api")}function a(){return O.exists&&performance.now?Math.round(performance.now()):(u=Math.max((new Date).getTime(),u))-x.offset}var u=(new Date).getTime(),f=e("handle"),c=e(3),s=e("ee"),p=e(2),d=window,l=d.document,m="addEventListener",v="attachEvent",g=d.XMLHttpRequest,w=g&&g.prototype;NREUM.o={ST:setTimeout,SI:d.setImmediate,CT:clearTimeout,XHR:g,REQ:d.Request,EV:d.Event,PR:d.Promise,MO:d.MutationObserver};var h=""+location,y={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1123.min.js"},b=g&&w&&w[m]&&!/CriOS/.test(navigator.userAgent),x=n.exports={offset:u,now:a,origin:h,features:{},xhrWrappable:b,userAgent:p};e(1),l[m]?(l[m]("DOMContentLoaded",i,!1),d[m]("load",r,!1)):(l[v]("onreadystatechange",o),d[v]("onload",r)),f("mark",["firstbyte",u],null,"api");var E=0,O=e(5)},{}]},{},["loader"]);</script>
+<title>Dubarry of Ireland Women &amp; Mens, Clothing &amp; Footwear UK</title>
+<meta name="description" content="The new Dubarry collection, water and outdoor clothing , boat shoes, sailing boots , leather boots and accessories for men and women ." />
+<meta name="keywords" content="dubarry of ireland, dubarry womens boots, ladies boots, walking boots, dubarry boots, leather country boots, dubarry mens boots, waterproof mens boots, mens footwear, dubarry jackets, mens jackets, leather jackets, dubarry tweed, tweed, country clothing, tweed jacket, womens clothing, outdoor clothing, dubarry womens clothes shop, fashion fur accessories, handbags, dubarry leather care products, leather shoe care
+
+" />
+<meta name="robots" content="INDEX,FOLLOW" />
+<link rel="icon" href="https://www.dubarryboots.com/skin/frontend/dubarry/default/favicon.ico" type="image/x-icon" />
+<link rel="shortcut icon" href="https://www.dubarryboots.com/skin/frontend/dubarry/default/favicon.ico" type="image/x-icon" />
+<!--[if lt IE 7]>
+<script type="text/javascript">
+//<![CDATA[
+    var BLANK_URL = 'https://www.dubarryboots.com/js/blank.html';
+    var BLANK_IMG = 'https://www.dubarryboots.com/js/spacer.gif';
+//]]>
+</script>
+<![endif]-->
+<link href='//fonts.googleapis.com/css?family=Lora' rel='stylesheet' type='text/css'>
+<link href='//fonts.googleapis.com/css?family=Roboto+Slab:400,700' rel='stylesheet' type='text/css'>
+<!--group: nogroup-->
+<link rel="stylesheet" type="text/css" href="https://www.dubarryboots.com/js/amasty/amgroupcat/css/groupcat.css" />
+<link rel="stylesheet" type="text/css" href="https://www.dubarryboots.com/skin/frontend/base/default/aw_blog/css/style.css" media="all" />
+<link rel="stylesheet" type="text/css" href="https://www.dubarryboots.com/skin/frontend/base/default/collectplus/css/collect.css" media="all" />
+<link rel="stylesheet" type="text/css" href="https://www.dubarryboots.com/skin/frontend/base/default/css/mirasvit_searchindex.css" media="all" />
+<link rel="stylesheet" type="text/css" href="https://www.dubarryboots.com/skin/frontend/base/default/css/cookienotice.css" media="all" />
+<link rel="stylesheet" type="text/css" href="https://www.dubarryboots.com/skin/frontend/base/default/studioforty9_geoip/css/bootstrap.modal.3.3.6.css" media="all" />
+<link rel="stylesheet" type="text/css" href="https://www.dubarryboots.com/skin/frontend/base/default/css/wyomind/elasticsearch.css" media="all" />
+<link rel="stylesheet" type="text/css" href="https://www.dubarryboots.com/skin/frontend/dubarry/default/dist/css/style.css" media="all" />
+<link rel="stylesheet" type="text/css" href="https://www.dubarryboots.com/skin/frontend/base/default/css/tm/aln/ajaxlayerednavigation.css" media="all" />
+<link rel="stylesheet" type="text/css" href="https://www.dubarryboots.com/skin/frontend/base/default/css/tm/aln/ion.rangeSlider.css" media="all" />
+<link rel="stylesheet" type="text/css" href="https://www.dubarryboots.com/skin/frontend/base/default/css/tm/aln/ion.rangeSlider.skinNice.css" media="all" />
+<link rel="stylesheet" type="text/css" href="https://www.dubarryboots.com/skin/frontend/base/default/sagepaysuite/css/sagePaySuite.css" media="all" />
+
+<script type="text/javascript" src="https://www.dubarryboots.com/js/prototype/prototype.js"></script>
+<script type="text/javascript" src="https://www.dubarryboots.com/js/lib/ccard.js"></script>
+<script type="text/javascript" src="https://www.dubarryboots.com/js/prototype/validation.js"></script>
+<script type="text/javascript" src="https://www.dubarryboots.com/js/scriptaculous/effects.js"></script>
+<script type="text/javascript" src="https://www.dubarryboots.com/js/scriptaculous/controls.js"></script>
+<script type="text/javascript" src="https://www.dubarryboots.com/js/varien/js.js"></script>
+<script type="text/javascript" src="https://www.dubarryboots.com/js/varien/form.js"></script>
+<script type="text/javascript" src="https://www.dubarryboots.com/js/mage/translate.js"></script>
+<script type="text/javascript" src="https://www.dubarryboots.com/js/mage/cookies.js"></script>
+<script type="text/javascript" src="https://www.dubarryboots.com/js/et/currencymanager/et_currencymanager.js"></script>
+<script type="text/javascript" src="https://www.dubarryboots.com/js/et/currencymanager/et_currencymanager_round.js"></script>
+<script type="text/javascript" src="https://www.dubarryboots.com/js/varien/product.js"></script>
+<script type="text/javascript" src="https://www.dubarryboots.com/js/varien/product_options.js"></script>
+<script type="text/javascript" src="https://www.dubarryboots.com/js/varien/configurable.js"></script>
+<script type="text/javascript" src="https://www.dubarryboots.com/js/hero/configurable_quickview.js"></script>
+<script type="text/javascript" src="https://www.dubarryboots.com/skin/frontend/base/default/js/ec.js"></script>
+<script type="text/javascript" src="https://www.dubarryboots.com/skin/frontend/dubarry/default/js/jquery.min.js"></script>
+<script type="text/javascript" src="https://www.dubarryboots.com/skin/frontend/base/default/collectplus/js/collect.js"></script>
+<script type="text/javascript" src="https://www.dubarryboots.com/skin/frontend/base/default/js/modernizr.js"></script>
+<script type="text/javascript" src="https://www.dubarryboots.com/skin/frontend/dubarry/default/js/hammer.min.js"></script>
+<script type="text/javascript" src="https://www.dubarryboots.com/skin/frontend/dubarry/default/js/jquery.hammer.min.js"></script>
+<script type="text/javascript" src="https://www.dubarryboots.com/skin/frontend/dubarry/default/js/dubarry.js"></script>
+<script type="text/javascript" src="https://www.dubarryboots.com/skin/frontend/base/default/js/tm/aln/ajaxlayerednavigation.js"></script>
+<script type="text/javascript" src="https://www.dubarryboots.com/skin/frontend/base/default/js/tm/aln/jquery-1.12.3.min.js"></script>
+<script type="text/javascript" src="https://www.dubarryboots.com/skin/frontend/base/default/js/tm/aln/jquery-noConflict.js"></script>
+<script type="text/javascript" src="https://www.dubarryboots.com/skin/frontend/base/default/js/tm/aln/ion.rangeSlider.min.js"></script>
+<script type="text/javascript" src="https://www.dubarryboots.com/skin/frontend/dubarry/default/js/tm/aln/ajaxlayerednavigation-mobile.js"></script>
+<script type="text/javascript" src="https://www.dubarryboots.com/js/scommerce/require_jquery_gdpr_v1.js" data-group="js001"></script>
+<script type="text/javascript" src="https://www.dubarryboots.com/skin/frontend/base/default/studioforty9_geoip/js/bootstrap.modal.3.3.6.js" data-group="lower"></script>
+<script type="text/javascript" src="https://www.dubarryboots.com/skin/frontend/dubarry/default/js/affix.js" name="last"></script>
+<link href="https://www.dubarryboots.com/blog/rss/index/store_id/1/" title="Blog" rel="alternate" type="application/rss+xml" />
+
+<script type="text/javascript">
+//<![CDATA[
+Mage.Cookies.path     = '/';
+Mage.Cookies.domain   = '.www.dubarryboots.com';
+//]]>
+</script>
+
+<script type="text/javascript">
+//<![CDATA[
+optionalZipCountries = ["US"];
+//]]>
+</script>
+<script>
+
+	
+	window.dataLayer = window.dataLayer || [], collection = [];
+
+		
+	AEC.Const = 
+	{
+		TIMING_CATEGORY_ADD_TO_CART:		'Add To Cart Time',
+		TIMING_CATEGORY_REMOVE_FROM_CART:	'Remove From Cart Time',
+		TIMING_CATEGORY_PRODUCT_CLICK:		'Product Detail Click Time',
+		TIMING_CATEGORY_CHECKOUT:			'Checkout Time',
+		TIMING_CATEGORY_CHECKOUT_STEP:		'Checkout Step Time',
+		TIMING_CATEGORY_PRODUCT_WISHLIST:	'Add to Wishlist Time',
+		TIMING_CATEGORY_PRODUCT_COMPARE:	'Add to Compare Time',
+		URL:								'https://www.dubarryboots.com/'
+	};
+
+		
+	AEC.Const.Viewport = false;
+
+		
+	AEC.Const.ClientId = 523257808.1519290602;
+
+		
+	AEC.CookieConsent.support = false;
+
+		
+	AEC.Message = 
+	{
+		confirmRemove: 'Are you sure you would like to remove this item from the shopping cart?'
+	};
+
+	AEC.currencyCode 	= 'GBP';
+	AEC.eventTimeout 	=  2000;
+	AEC.eventCallback	=  false;
+	AEC.forceSelectors 	=  0;
+	AEC.facebook 		=  false;
+	AEC.facebookPixelId = '';
+
+	AEC.SUPER = [];
+
+	/**
+	 * Persistent dataLayer[] data
+	 */
+	AEC.Persist = (function(dataLayer)
+	{
+		var DATA_KEY = 'persist'; 
+
+		var proto = 'undefined' != typeof Storage ? 
+		{
+			push: function(key, entity)
+			{
+				/**
+				 * Get data
+				 */
+				var data = this.data();
+
+				/**
+				 * Push data
+				 */
+				data[key] = entity;
+
+				/**
+				 * Save to local storage
+				 */
+				localStorage.setItem(DATA_KEY, JSON.stringify(data));
+
+				return this;
+			},
+			data: function()
+			{
+				var data = localStorage.getItem(DATA_KEY);
+				
+				if (null !== data)
+				{
+					return JSON.parse(data);
+				}
+
+				return {};
+			},
+			merge: function()
+			{
+				var data = this.data();
+				var push = 
+				{
+					persist: {}
+				};
+
+				for (var i in data)
+				{
+					push.persist[i] = data[i];
+				}
+
+				dataLayer.push(push);
+
+				return this;
+			},
+			clear: function()
+			{
+				/**
+				 * Reset private local storage
+				 */
+				localStorage.setItem(DATA_KEY,JSON.stringify({}));
+
+				return this;
+			}
+		} : {
+			push: 	function(){}, 
+			merge: 	function(){},
+			clear: 	function(){}
+		}
+
+		/**
+		 * Constants
+		 */
+		proto.CONST_KEY_PROMOTION = 'persist_promotion';
+
+		return proto;
+		
+	})(dataLayer).merge();
+
+	if (AEC.facebook)
+	{
+		!function(f,b,e,v,n,t,s)
+		{
+			if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+			n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+			n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+			t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)
+		}(window,document,'script','//connect.facebook.net/en_US/fbevents.js');
+
+				
+		
+								
+				fbq('init', AEC.facebookPixelId);
+
+								
+				fbq('track','PageView');
+		
+			}
+	
+</script>
+<script>
+
+	/**
+ 	 * Define dataLayer[] object
+	 */
+	window.dataLayer = window.dataLayer || [];
+
+	/**
+	 * Define transport layer to use as fallback in case of Ad-Blockers
+	 * 
+	 * @copyright Anowave
+	 */
+	var dataLayerTransport = (function()
+	{
+		var data = [];
+		
+		return {
+			data:[],
+			push: function(data)
+			{
+				this.data.push(data);
+				
+				return this;
+			},
+			serialize: function()
+			{
+				return this.data;
+			}
+		}	
+	})();
+
+			
+</script><script>
+
+	var visitor = 
+	{
+		visitorLoginState: 		'Logged out',
+		visitorType:			'NOT LOGGED IN',
+		visitorLifetimeValue:	 0,
+		visitorExistingCustomer:'No'
+	};
+
+	
+	if ('undefined' !== typeof jQuery)
+	{
+		(function($, visitor)
+		{
+			$.extend(visitor, []);
+			
+		})(jQuery, visitor);
+	}
+
+	AEC.Cookie.visitor(visitor).push(dataLayer);
+
+	
+</script><script>
+
+	/**
+	 * Custom dimensions
+	 */
+	var dimensions = {"pageType":"home","pageName":"Dubarry of Ireland Women &amp; Mens, Clothing &amp; Footwear UK"};
+	
+	if (dimensions && dimensions.hasOwnProperty('pageType'))
+	{
+		dataLayer.push(dimensions);
+	}
+
+</script><script>
+
+	/**
+	 * A/B Split Testing Experiments
+	 * 
+	 * @copyright Anowave
+ 	 * @release Requires PHP 5.4 or higher.
+	 */
+
+	 if ('undefined' === typeof AB)
+	 {
+		var AB = (function($, dataLayer)
+		{
+			var cookies = {}, experiment_cookie = 'ab', percent = 50;
+
+			/**
+			 * Get experiment(s)
+			 */
+			var experiments = {};
+
+			
+			return {
+				experiments: experiments,
+				experiments_data:[],
+				run: function()
+				{
+					$.each(this.experiments, function(index, experiment)
+					{
+						if (experiment.triggered)
+						{
+							experiment.callback.apply(experiment,[dataLayer]);
+						}
+					});
+
+					return this;
+				},
+				experiment: function(experiment)
+				{
+					/**
+					 * Get experiment content
+					 */
+					var content = $('[id=' + experiment + ']').html();
+
+					/**
+					 * Replace experimented content
+					 */
+					$('span[data-experiment=' + experiment + ']').html(content);
+				}
+			}
+		})(jQuery, dataLayer).run();
+	 }
+
+</script><script>
+
+	if ('undefined' !== typeof jQuery && 'undefined' !== typeof dataLayer)
+	{
+		jQuery(document).ready(function()
+		{
+		    var PromotionTrack = (function($, dataLayer)
+		    {
+		        return {
+		            apply: function()
+		            {
+		                var promotions = [], position = 0;
+		
+		                $('[data-promotion]').each(function()
+		                {
+		                    promotions.push(
+	                        {
+	                            id:      	$(this).data('promotion-id'),
+	                            name:    	$(this).data('promotion-name'),
+	                            creative:	$(this).data('promotion-creative'),
+	                            position:	++position
+	                        });
+	
+		                    $(this).on(
+	                        {
+	                            click: function()
+	                            {
+		                           	var data = 
+			                        {
+	                           			'event': 'promotionClick',
+	                           			'eventLabel': 'Promotion click',
+                                        'ecommerce': 
+                                        {
+                                            'promoClick': 
+                                            {
+                                                'promotions':
+                                                [
+	                                                {
+		                                                'id':       $(this).data('promotion-id'),
+		                                                'name':     $(this).data('promotion-name'),
+		                                                'creative': $(this).data('promotion-creative'),
+		                                                'position': $(this).data('promotion-position')
+	                                                }
+                                                ]
+                                            }
+                                        }
+					                };
+					                
+	                                dataLayer.push(data);
+
+	                                /**
+	                                 * Save persistent data
+	                                 */
+	                                AEC.Persist.push(AEC.Persist.CONST_KEY_PROMOTION,
+	    	                        {
+		    	                        'promotion':data.ecommerce.promoClick.promotions[0]
+		    	                    });
+	                            }
+	                        });
+		                });
+		
+		                if (promotions.length)
+		                {
+		                	(function(callback)
+		                	{
+		                		if (AEC.CookieConsent.support)
+		                		{
+		                			AEC.CookieConsent.queue(callback).process();
+		                		}
+		                		else 
+		                		{
+		                			callback.apply(window,[]);
+		                		}
+		                				
+		                	})((function(dataLayer, google_tag_params)
+		                	{
+		                		return function()
+		                		{
+		                			dataLayer.push(
+                	                {
+                		                 'event':'promoViewNonInteractive',
+                		                 'eventLabel':'Promotion view',
+                	                     'ecommerce':
+                	                     {
+                	                           'promoView':
+                	                           {
+                	                               'promotions': promotions
+                	                           }
+                	                      }
+                	                });
+		                		}
+		                	})(dataLayer, promotions));
+		                }
+		
+		                return this;
+		            }
+		        }
+		    })(jQuery, dataLayer).apply();
+		});
+	}
+	else 
+	{
+		console.log('Promotion tracking requires jQuery and dataLayer[] object defined.');
+	}
+	
+</script><script>
+
+	var EC = [];
+
+		
+	window.google_tag_params = window.google_tag_params || {};
+
+		
+	window.google_tag_params.ecomm_pagetype = 'home';
+
+		
+	window.G = [];
+
+		
+	window.revenue = 0;
+
+		
+	window.DoubleClick = 
+	{
+		DoubleClickRevenue:	 	0,
+		DoubleClickTransaction: 0,
+		DoubleClickQuantity: 	0
+	};
+
+		
+</script>
+<script>AEC.Cookie.pushPrivate()</script>
+<script>
+
+	/**
+ 	 * Push tracking 
+	 */
+	
+				var data = AEC.Cookie.Storage.get('ec_d2fb6e2818c52b15f9c6f76c9af41eef_ec_details');
+
+		if (data)
+		{
+						data.localStorage = true;
+
+						dataLayer.push(data);
+		}
+	
+	
+		if ('undefined' !== typeof Product && Product.hasOwnProperty('OptionsPrice') && Product.OptionsPrice.prototype.hasOwnProperty('formatPrice'))
+	{
+				
+		var updateDataPrice = function(price)
+		{
+			var price = parseFloat(price).toFixed(2);
+
+			jQuery('[data-event="addToCart"]').data('price', price).attr('data-price', price);
+		}
+		
+				Product.OptionsPrice.prototype.reload = Product.OptionsPrice.prototype.reload.wrap(function(parentMethod)
+		{
+			parentMethod();
+
+						
+			AEC.Callbacks.queue(updateDataPrice);
+			
+		});
+
+		Product.OptionsPrice.prototype.formatPrice = Product.OptionsPrice.prototype.formatPrice.wrap(function(parentMethod, price)
+		{
+						AEC.Callbacks.apply(price);
+
+			updateDataPrice(price);
+
+			var price = parentMethod(price);
+
+			return price;
+		});
+	}
+
+		</script><script>
+
+	
+	
+</script><script>
+	</script>
+<script>
+		</script>
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-MWXS5Z2');</script>
+<!-- End Google Tag Manager --><script type="text/javascript">
+etCurrencyManagerJsConfig={"precision":2,"position":8,"display":2,"excludecheckout":"1","cutzerodecimal":"1","cutzerodecimal_suffix":""}</script>
+<!-- Facebook Ads Extension for Magento -->
+<!-- NO Pixel ID is configured, please goto Admin -->
+<script>
+ console.log('No facebook pixel is configured, please log in as a admin and then visit Facebook Ads Extension -> Get Started');
+</script>
+        <!-- Google Analytics - Part 1/2-->
+    <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+        ga('create', 'UA-21780449-1','auto');
+        
+                                
+    </script>
+    <!-- End Google Analytics Part 1/2 -->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+						 <style  type="text/css">
+							.mega-menu.dropdown  {
+								min-width: 150px;
+							}
+						 </style> 
+					<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!--[if lt IE 9]>
+  <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+  <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
+<script>(function(w,d,t,r,u){var f,n,i;w[u]=w[u]||[],f=function(){var o={ti:"5548824"};o.q=w[u],w[u]=new UET(o),w[u].push("pageLoad")},n=d.createElement(t),n.src=r,n.async=1,n.onload=n.onreadystatechange=function(){var s=this.readyState;s&&s!=="loaded"&&s!=="complete"||(f(),n.onload=n.onreadystatechange=null)},i=d.getElementsByTagName(t)[0],i.parentNode.insertBefore(n,i)})(window,document,"script","//bat.bing.com/bat.js","uetq");</script><noscript><img src="//bat.bing.com/action/0?ti=5548824&Ver=2" height="0" width="0" style="display:none; visibility: hidden;" /></noscript><script type="text/javascript">//<![CDATA[
+        var Translator = new Translate({"Add to Cart":"Add to Bag"});
+        //]]></script><!-- Hotjar Tracking Code for http://www.dubarryboots.com -->
+<script>
+    (function(h,o,t,j,a,r){
+        h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+        h._hjSettings={hjid:143181,hjsv:5};
+        a=o.getElementsByTagName('head')[0];
+        r=o.createElement('script');r.async=1;
+        r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+        a.appendChild(r);
+    })(window,document,'//static.hotjar.com/c/hotjar-','.js?sv=');
+</script>
+
+<style>
+.cms-index-index .video .controls{ display: block; }
+</style>
+
+<!-- Google remarketing Code -->
+<script id="mcjs">!function(c,h,i,m,p){m=c.createElement(h),p=c.getElementsByTagName(h)[0],m.async=1,m.src=i,p.parentNode.insertBefore(m,p)}(document,"script","https://chimpstatic.com/mcjs-connected/js/users/fccb21338b504c16595917ac1/9e1437f50921a95dfcc83c152.js");</script>
+<!-- End Google remarketing Code -->
+</head>
+<body class=" cms-index-index cookie-deny cms-">
+
+    <!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MWXS5Z2"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) --><script type="text/javascript">
+//<![CDATA[
+if (typeof(Varien.searchForm) !== 'undefined') {
+    Varien.searchForm.prototype._selectAutocompleteItem = function(element) {
+        var link = element.down();
+        if (link && link.tagName == 'A') {
+            setLocation(link.href);
+        } else {
+            if (element.title){
+                this.field.value = element.title;
+            }
+            this.form.submit();
+        }
+    };
+    Varien.searchForm.prototype.initAutocomplete = function(url, destinationElement) {
+        new Ajax.Autocompleter(
+            this.field,
+            destinationElement,
+            url,
+            {
+                paramName: this.field.name,
+                method: 'get',
+                minChars: 1,
+                frequency: .1,
+                updateElement: this._selectAutocompleteItem.bind(this),
+                onShow : function(element, update) {
+                    if(!update.style.position || update.style.position=='absolute') {
+                        update.style.position = 'absolute';
+                        Position.clone(element, update, {
+                            setHeight: false,
+                            offsetTop: element.offsetHeight
+                        });
+                    }
+                    Effect.Appear(update,{duration:0});
+                }
+
+            }
+        );
+    };
+    Autocompleter.Base.prototype.markPrevious = function() {
+        if (this.index > 0) {
+            this.index--;
+        } else {
+            this.index = this.entryCount - 1;
+        }
+        var entry = this.getEntry(this.index);
+        if (entry.select('a').length === 0) {
+            this.markPrevious(); // Ignore items that don't have link
+        }
+    };
+    Autocompleter.Base.prototype.markNext = function() {
+        if (this.index < this.entryCount - 1) {
+            this.index++;
+        } else {
+            this.index = 0;
+        }
+        var entry = this.getEntry(this.index);
+        if (entry.select('a').length === 0) {
+            this.markNext(); // Ignore items that don't have link
+        } else {
+            entry.scrollIntoView(false);
+        }
+    };
+}
+//]]>
+</script>
+    
+<div class="container header-container">
+    <ul class="header-nav-container hidden-xs">
+        
+                <li>
+            <a href="javascript: void(0);">
+                Customer Service                <i class="fa fa-caret-down"></i>
+                <i class="fa fa-caret-up"></i>
+            </a>
+
+            
+            <ul>
+                                    <li><a href="https://www.dubarryboots.com/customer-service/faq">FAQ</a></li>
+                                    <li><a href="https://www.dubarryboots.com/customer-service/orders">Orders</a></li>
+                                    <li><a href="https://www.dubarryboots.com/customer-service/shipping">Shipping</a></li>
+                                    <li><a href="https://www.dubarryboots.com/customer-service/payments">Payments</a></li>
+                                    <li><a href="https://www.dubarryboots.com/customer-service/warranty">Warranty</a></li>
+                                    <li><a href="https://www.dubarryboots.com/customer-service/repairs">Repairs</a></li>
+                                    <li><a href="https://www.dubarryboots.com/customer-service/returns-exchanges">Returns & Exchanges</a></li>
+                                    <li><a href="https://www.dubarryboots.com/customer-service/size-guides">Size Guides</a></li>
+                                    <li><a href="https://www.dubarryboots.com/customer-service/give-feedback">Website Feedback</a></li>
+                                    <li><a href="https://www.dubarryboots.com/customer-service/contact-dubarry">Contact Us</a></li>
+                            </ul>
+        </li>
+                <li>
+            <a href="javascript: void(0);">
+                About Us                <i class="fa fa-caret-down"></i>
+                <i class="fa fa-caret-up"></i>
+            </a>
+
+            
+            <ul>
+                                    <li><a href="https://www.dubarryboots.com/about-us/catalogue">Catalogue</a></li>
+                                    <li><a href="https://www.dubarryboots.com/about-us/dubarry-brand-history">Dubarry Brand History</a></li>
+                                    <li><a href="https://www.dubarryboots.com/about-us/dubarry-boots">Footwear</a></li>
+                                    <li><a href="https://www.dubarryboots.com/about-us/clothing">Clothing</a></li>
+                                    <li><a href="https://www.dubarryboots.com/about-us/work-for-dubarry">Work for Dubarry</a></li>
+                                    <li><a href="https://www.dubarryboots.com/about-us/customer-service">Customer Service</a></li>
+                                    <li><a href="https://www.dubarryboots.com/about-us/join-our-mailing-list">Join our mailing list</a></li>
+                                    <li><a href="https://www.dubarryboots.com/about-us/blog">Blog</a></li>
+                            </ul>
+        </li>
+                <li>
+            <a href="javascript: void(0);">
+                Footwear Care                <i class="fa fa-caret-down"></i>
+                <i class="fa fa-caret-up"></i>
+            </a>
+
+            
+            <ul>
+                                    <li><a href="https://www.dubarryboots.com/footwear-care/repair-dubarry-boots-shoes">Repair Dubarry Boots & Shoes</a></li>
+                                    <li><a href="https://www.dubarryboots.com/footwear-care/warranty">Warranty</a></li>
+                                    <li><a href="https://www.dubarryboots.com/footwear-care/leather-care">Footwear & Leather Care</a></li>
+                                    <li><a href="https://www.dubarryboots.com/footwear-care/care-products">Care Products</a></li>
+                                    <li><a href="https://www.dubarryboots.com/footwear-care/knot-your-dubarry-s">Knot your Dubarry Videos</a></li>
+                                    <li><a href="https://www.dubarryboots.com/footwear-care/customer-service">Customer Service</a></li>
+                            </ul>
+        </li>
+                <li>
+            <a href="javascript: void(0);">
+                Buy Dubarry                <i class="fa fa-caret-down"></i>
+                <i class="fa fa-caret-up"></i>
+            </a>
+
+            
+            <ul>
+                                    <li><a href="https://www.dubarryboots.com/buy-dubarry/latest-catalogue">Catalogue</a></li>
+                                    <li><a href="https://www.dubarryboots.com/buy-dubarry/for-her">Gift Certificate</a></li>
+                                    <li><a href="https://www.dubarryboots.com/buy-dubarry/dubarry-stores">Dubarry Stores</a></li>
+                                    <li><a href="https://www.dubarryboots.com/buy-dubarry/dubarry-events">Dubarry Events</a></li>
+                                    <li><a href="https://www.dubarryboots.com/buy-dubarry/where-can-i-buy-dubarry-in-the-uk">Where Can I Buy Dubarry in the UK?</a></li>
+                                    <li><a href="https://www.dubarryboots.com/buy-dubarry/customer-service">Customer Service</a></li>
+                            </ul>
+        </li>
+            </ul>
+
+    <header role="banner">
+        <a href="https://www.dubarryboots.com/" title="Dubarry" class="logo">
+            <img src="https://www.dubarryboots.com/skin/frontend/dubarry/default/images/dubarry-logo.png" alt="Dubarry"/>
+        </a>
+
+        <div class="quick-access">
+            <form id="search_mini_form" action="https://www.dubarryboots.com/catalogsearch/result/" method="get">
+    <div class="form-search">
+        <input id="search" type="text" name="q" value="" class="search-box" maxlength="128">
+        <button type="submit" title="Search" data-check-res><i class="fa fa-search"></i></button>
+
+        <div id="search_autocomplete" class="search-autocomplete"></div>
+        <script type="text/javascript">
+        //<![CDATA[
+            var searchForm = new Varien.searchForm('search_mini_form', 'search', 'Search...');
+            searchForm.initAutocomplete('https://www.dubarryboots.com/autocomplete.php?store=uk&currency=GBP&fallback_url=https://www.dubarryboots.com/catalogsearch/ajax/suggest/', 'search_autocomplete');
+        //]]>
+        </script>
+    </div>
+</form>
+            <a class="cart-summary" href="https://www.dubarryboots.com/checkout/cart/">
+    <span class="cart-icon" data-check-res>
+        <img src="https://www.dubarryboots.com/skin/frontend/dubarry/default/images/bag.jpg" width="14" /> <span class="hidden-xs">My Bag</span>
+    <span class="count">0</span>
+</a>            <div class="clearfix">
+                <ul class="links">
+	    <li>
+        <i class="fa fa-globe hidden-xs"></i>
+        <select id="website-switcher" onchange="window.location=this.options[this.selectedIndex].value">
+                            <option value="https://www.dubarry.com.au/?___store=au&alias=Australia"
+                    >
+                    Australia                </option>
+                            <option value="https://www.dubarry.de/?___store=de&alias=Austria"
+                    >
+                    Austria                </option>
+                            <option value="https://www.dubarry.nl/?___store=nl&alias=Belgium"
+                    >
+                    Belgium                </option>
+                            <option value="https://www.dubarrycanada.ca/?___store=ca&alias=Canada"
+                    >
+                    Canada                </option>
+                            <option value="https://www.dubarry.se/?___store=se&alias=Denmark"
+                    >
+                    Denmark                </option>
+                            <option value="https://www.dubarry.se/?___store=se&alias=Finland"
+                    >
+                    Finland                </option>
+                            <option value="https://www.dubarryfrance.fr/?___store=fr&alias=France"
+                    >
+                    France                </option>
+                            <option value="https://www.dubarry.de/?___store=de&alias=Germany"
+                    >
+                    Germany                </option>
+                            <option value="https://www.dubarry.ie/?___store=ie&alias=Ireland"
+                    >
+                    Ireland                </option>
+                            <option value="http://www.dubarry.it/"
+                    >
+                    Italy                </option>
+                            <option value="https://www.dubarry.nl/?___store=nl&alias=Luxembourg"
+                    >
+                    Luxembourg                </option>
+                            <option value="https://www.dubarry.nl/?___store=nl&alias=Netherlands"
+                    >
+                    Netherlands                </option>
+                            <option value="https://www.dubarry.com.au/?___store=au&alias=New Zealand"
+                    >
+                    New Zealand                </option>
+                            <option value="https://www.dubarry.se/?___store=se&alias=Norway"
+                    >
+                    Norway                </option>
+                            <option value="https://www.dubarry.us/?___store=us&alias=South America"
+                    >
+                    South America                </option>
+                            <option value="https://www.dubarry.se/?___store=se&alias=Sweden"
+                    >
+                    Sweden                </option>
+                            <option value="https://www.dubarry.de/?___store=de&alias=Switzerland"
+                    >
+                    Switzerland                </option>
+                            <option value="https://www.dubarryboots.com/?___store=uk&alias=UK"
+                    selected="selected">
+                    UK                </option>
+                            <option value="https://www.dubarry.us/?___store=us&alias=USA"
+                    >
+                    USA                </option>
+                            <option value="https://www.dubarry.eu/?___store=eu&alias=Rest of World"
+                    >
+                    Rest of World                </option>
+                    </select>
+    </li>
+
+<p class="social">
+                <a href="https://www.facebook.com/DubarryOfIreland" target="_blank">
+            <i class="fa fa-facebook"></i>
+        </a>
+            <a href="https://twitter.com/Dubarry_com" target="_blank">
+            <i class="fa fa-twitter"></i>
+        </a>
+            <a href="http://instagram.com/dubarryofireland" target="_blank">
+            <i class="fa fa-instagram"></i>
+        </a>
+            <a href="http://www.pinterest.com/dubarryboots/" target="_blank">
+            <i class="fa fa-pinterest"></i>
+        </a>
+    </p>
+
+<li class="first">
+    <a href="https://www.dubarryboots.com/customer/account/"
+       title="My Account" class="my-account"><span class="hidden-xs">
+        My Account</span>
+    </a>
+        </li>
+
+    </ul>
+            </div>
+        </div>
+            </header>
+</div>
+
+<div class="mobile">
+    
+<div class="menu">
+    <div class="container">
+        <a class="toggle-menu visible-xs visible-sm" href="#">
+            <i class="fa fa-bars"></i>
+            <i class="fa fa-times"></i>
+            Menu        </a>
+        <ul id="main-menu" data-check-transforms>
+            <li class="visible-affix hidden-sm hidden-xs">
+                <a href="/" title="" class="logo">
+                    <img src="https://www.dubarryboots.com/skin/frontend/dubarry/default/images/dubarry-logo.png" alt=""/>
+                </a>
+            </li>
+                                                            <li class="top has-children pages">
+                    <a href="javascript: void(0)"
+                       style="color: #d6931d;">
+                        Clearance                     </a>
+                                                                <div class="mega-menu dropdown">
+                            <div class="container">
+                                <ul>
+                                                                                                                    <li>
+                                            <a href="https://www.dubarryboots.com/winter-sale-uk/womens-footwear"
+                                               style="color: #d6931d;">
+                                                Women's Footwear                                            </a>
+                                        </li>
+                                                                                                                    <li>
+                                            <a href="https://www.dubarryboots.com/winter-sale-uk/womens-clothing"
+                                               style="color: #d6931d;">
+                                                Women's Clothing                                            </a>
+                                        </li>
+                                                                                                                    <li>
+                                            <a href="https://www.dubarryboots.com/winter-sale-uk/mens-footwear"
+                                               style="color: #d6931d;">
+                                                Men’s Footwear                                            </a>
+                                        </li>
+                                                                                                                    <li>
+                                            <a href="https://www.dubarryboots.com/winter-sale-uk/mens-clothing"
+                                               style="color: #d6931d;">
+                                                Men's Clothing                                            </a>
+                                        </li>
+
+
+
+                                                                                                                    <li>
+                                            <a href="https://www.dubarryboots.com/winter-sale-uk/bags-accessories-sale"
+                                               style="color: #d6931d;">
+                                                Bags & Accessories                                            </a>
+                                        </li>
+
+                                         
+                                                                                                                    <li>
+                                            <a href="https://www.dubarryboots.com/winter-sale-uk/tweed-sale"
+                                               style="color: #d6931d;">
+                                                Tweed                                            </a>
+                                        </li>
+                                                                                                                    <li>
+                                            <a href="https://www.dubarryboots.com/winter-sale-uk/outerwear"
+                                               style="color: #d6931d;">
+                                                Outerwear                                            </a>
+                                        </li>
+                                                                    </ul>
+                            </div>
+                        </div>
+                                    </li>
+                                                            <li class="top has-children pages">
+                    <a href="javascript: void(0)"
+                       style="color: inherit;">
+                        Women’s Footwear                    </a>
+                                                                <div class="mega-menu dropdown">
+                            <div class="container">
+                                <ul>
+                                                                                                                    <li>
+                                            <a href="https://www.dubarryboots.com/womens-footwear/country-boots"
+                                               style="color: inherit;">
+                                                Country Boots                                            </a>
+                                        </li>
+                                                                                                                    <li>
+                                            <a href="https://www.dubarryboots.com/womens-footwear/sailing-boots"
+                                               style="color: inherit;">
+                                                Sailing Boots                                            </a>
+                                        </li>
+                                                                                                                    <li>
+                                            <a href="https://www.dubarryboots.com/womens-footwear/moccasins"
+                                               style="color: inherit;">
+                                                Moccasins                                            </a>
+                                        </li>
+                                                                                                                    <li>
+                                            <a href="https://www.dubarryboots.com/womens-footwear/womens-aquasport-shoes"
+                                               style="color: inherit;">
+                                                Aquasport Shoes                                            </a>
+                                        </li>
+                                                                                                                    <li>
+                                            <a href="https://www.dubarryboots.com/womens-footwear/sale-womens-footwear"
+                                               style="color: #d6931d;">
+                                                Clearance                                             </a>
+                                        </li>
+                                                                    </ul>
+                            </div>
+                        </div>
+                                    </li>
+                                                            <li class="top has-children pages">
+                    <a href="javascript: void(0)"
+                       style="color: inherit;">
+                        Women’s Clothing                    </a>
+                                                                <div class="mega-menu dropdown">
+                            <div class="container">
+                                <ul>
+                                                                                                                    <li>
+                                            <a href="https://www.dubarryboots.com/womens-clothing/weatherproof-jackets"
+                                               style="color: inherit;">
+                                                Weatherproof Jackets                                            </a>
+                                        </li>
+                                                                                                                    <li>
+                                            <a href="https://www.dubarryboots.com/womens-clothing/gilets"
+                                               style="color: inherit;">
+                                                Gilets                                            </a>
+                                        </li>
+                                                                                                                    <li>
+                                            <a href="https://www.dubarryboots.com/womens-clothing/tweed-jackets"
+                                               style="color: inherit;">
+                                                Tweed Jackets                                            </a>
+                                        </li>
+                                                                                                                    <li>
+                                            <a href="https://www.dubarryboots.com/womens-clothing/tweed-skirts"
+                                               style="color: inherit;">
+                                                Tweed Skirts                                            </a>
+                                        </li>
+                                                                                                                    <li>
+                                            <a href="https://www.dubarryboots.com/womens-clothing/linen"
+                                               style="color: inherit;">
+                                                Linen                                            </a>
+                                        </li>
+                                                                                                                    <li>
+                                            <a href="https://www.dubarryboots.com/womens-clothing/shirts"
+                                               style="color: inherit;">
+                                                Shirts                                            </a>
+                                        </li>
+                                                                                                                    <li>
+                                            <a href="https://www.dubarryboots.com/womens-clothing/trousers"
+                                               style="color: inherit;">
+                                                Shorts & Trousers                                            </a>
+                                        </li>
+                                                                                                                    <li>
+                                            <a href="https://www.dubarryboots.com/womens-clothing/knitwear"
+                                               style="color: inherit;">
+                                                Knitwear                                            </a>
+                                        </li>
+                                                                                                                    <li>
+                                            <a href="https://www.dubarryboots.com/womens-clothing/tops"
+                                               style="color: inherit;">
+                                                Tops                                            </a>
+                                        </li>
+                                                                                                                    <li>
+                                            <a href="https://www.dubarryboots.com/womens-clothing/sale-uk"
+                                               style="color: #d6931d;">
+                                                Clearance                                             </a>
+                                        </li>
+                                                                    </ul>
+                            </div>
+                        </div>
+                                    </li>
+                                                            <li class="top has-children pages">
+                    <a href="javascript: void(0)"
+                       style="color: inherit;">
+                        Men’s Footwear                    </a>
+                                                                <div class="mega-menu dropdown">
+                            <div class="container">
+                                <ul>
+                                                                                                                    <li>
+                                            <a href="https://www.dubarryboots.com/mens-footwear/country-boots"
+                                               style="color: inherit;">
+                                                Country Boots                                            </a>
+                                        </li>
+                                                                                                                    <li>
+                                            <a href="https://www.dubarryboots.com/mens-footwear/goodyear-welted"
+                                               style="color: inherit;">
+                                                Goodyear Welted                                            </a>
+                                        </li>
+                                                                                                                    <li>
+                                            <a href="https://www.dubarryboots.com/mens-footwear/sailing-boots"
+                                               style="color: inherit;">
+                                                Sailing Boots                                            </a>
+                                        </li>
+                                                                                                                    <li>
+                                            <a href="https://www.dubarryboots.com/mens-footwear/deck-shoes"
+                                               style="color: inherit;">
+                                                Deck Shoes                                            </a>
+                                        </li>
+                                                                                                                    <li>
+                                            <a href="https://www.dubarryboots.com/mens-footwear/mens-aquasport-shoes"
+                                               style="color: inherit;">
+                                                Aquasport Shoes                                            </a>
+                                        </li>
+                                                                                                                    <li>
+                                            <a href="https://www.dubarryboots.com/mens-footwear/sale-mens-footwear"
+                                               style="color: #d6931d;">
+                                                Clearance                                             </a>
+                                        </li>
+                                                                    </ul>
+                            </div>
+                        </div>
+                                    </li>
+                                                            <li class="top has-children pages">
+                    <a href="javascript: void(0)"
+                       style="color: inherit;">
+                        Men’s Clothing                    </a>
+                                                                <div class="mega-menu dropdown">
+                            <div class="container">
+                                <ul>
+                                                                                                                    <li>
+                                            <a href="https://www.dubarryboots.com/mens-clothing/mens-weatherproof-jackets"
+                                               style="color: inherit;">
+                                                Weatherproof Jackets                                            </a>
+                                        </li>
+                                                                                                                    <li>
+                                            <a href="https://www.dubarryboots.com/mens-clothing/mens-gilets"
+                                               style="color: inherit;">
+                                                Gilets                                            </a>
+                                        </li>
+                                                                                                                    <li>
+                                            <a href="https://www.dubarryboots.com/mens-clothing/tweed-jackets"
+                                               style="color: inherit;">
+                                                Tweed Jackets                                            </a>
+                                        </li>
+                                                                                                                    <li>
+                                            <a href="https://www.dubarryboots.com/mens-clothing/knitwear"
+                                               style="color: inherit;">
+                                                Knitwear                                            </a>
+                                        </li>
+                                                                                                                    <li>
+                                            <a href="https://www.dubarryboots.com/mens-clothing/shirts"
+                                               style="color: inherit;">
+                                                Shirts                                            </a>
+                                        </li>
+                                                                                                                    <li>
+                                            <a href="https://www.dubarryboots.com/mens-clothing/polo-shirts"
+                                               style="color: inherit;">
+                                                Polo Shirts                                            </a>
+                                        </li>
+                                                                                                                    <li>
+                                            <a href="https://www.dubarryboots.com/mens-clothing/shorts"
+                                               style="color: inherit;">
+                                                Shorts                                            </a>
+                                        </li>
+                                                                                                                    <li>
+                                            <a href="https://www.dubarryboots.com/mens-clothing/sale-mens-clothing"
+                                               style="color: #d6931d;">
+                                                Clearance                                             </a>
+                                        </li>
+                                                                    </ul>
+                            </div>
+                        </div>
+                                    </li>
+                                    
+                                                            <li class="top has-children pages">
+                    <a href="javascript: void(0)"
+                       style="color: inherit;">
+                        Bags & Accessories                    </a>
+                                                                <div class="mega-menu dropdown">
+                            <div class="container">
+                                <ul>
+                                                                                                                    <li>
+                                            <a href="https://www.dubarryboots.com/accessories-gifts/womens-leather-purses"
+                                               style="color: inherit;">
+                                                Women’s Leather Purses                                            </a>
+                                        </li>
+                                                                                                                    <li>
+                                            <a href="https://www.dubarryboots.com/accessories-gifts/womens-leather-bags"
+                                               style="color: inherit;">
+                                                Women’s Leather Bags                                            </a>
+                                        </li>
+                                                                                                                    <li>
+                                            <a href="https://www.dubarryboots.com/accessories-gifts/womens-leather-belts"
+                                               style="color: inherit;">
+                                                Women’s Leather Belts                                            </a>
+                                        </li>
+                                                                                                                    <li>
+                                            <a href="https://www.dubarryboots.com/accessories-gifts/womens-hats"
+                                               style="color: inherit;">
+                                                Women’s Hats & Scarves                                            </a>
+                                        </li>
+                                                                                                                    <li>
+                                            <a href="https://www.dubarryboots.com/accessories-gifts/womens-fur-accessories"
+                                               style="color: inherit;">
+                                                Women’s Faux Fur Accessories                                            </a>
+                                        </li>
+                                                                                                                    <li>
+                                            <a href="https://www.dubarryboots.com/accessories-gifts/mens-leather-bags"
+                                               style="color: inherit;">
+                                                Men’s Leather Bags                                            </a>
+                                        </li>
+                                                                                                                    <li>
+                                            <a href="https://www.dubarryboots.com/accessories-gifts/mens-leather-belts"
+                                               style="color: inherit;">
+                                                Men’s Leather Belts                                            </a>
+                                        </li>
+                                                                                                                    <li>
+                                            <a href="https://www.dubarryboots.com/accessories-gifts/mens-leather-accessories"
+                                               style="color: inherit;">
+                                                Men’s Leather Accessories                                            </a>
+                                        </li>
+                                                                                                                    <li>
+                                            <a href="https://www.dubarryboots.com/accessories-gifts/mens-hats"
+                                               style="color: inherit;">
+                                                Men’s Hats                                            </a>
+                                        </li>
+                                                                                                                    <li>
+                                            <a href="https://www.dubarryboots.com/accessories-gifts/leather-luggage"
+                                               style="color: inherit;">
+                                                Leather Luggage                                            </a>
+                                        </li>
+                                                                                                                    <li>
+                                            <a href="https://www.dubarryboots.com/accessories-gifts/socks"
+                                               style="color: inherit;">
+                                                Socks                                            </a>
+                                        </li>
+                                                                                                                    <li>
+                                            <a href="https://www.dubarryboots.com/accessories-gifts/boot-accessories"
+                                               style="color: inherit;">
+                                                Boot Accessories                                            </a>
+                                        </li>
+                                                                                                                    <li>
+                                            <a href="https://www.dubarryboots.com/accessories-gifts/leather-care"
+                                               style="color: inherit;">
+                                                Care Products                                            </a>
+                                        </li>
+                                                                                                                    <li>
+                                            <a href="https://www.dubarryboots.com/accessories-gifts/dubarry-umbrellas"
+                                               style="color: inherit;">
+                                                Umbrellas                                            </a>
+                                        </li>
+                                                                                                                    <li>
+                                            <a href="https://www.dubarryboots.com/accessories-gifts/dog-accessories"
+                                               style="color: inherit;">
+                                                Dog Accessories                                            </a>
+                                        </li>
+                                                                                                                    <li>
+                                            <a href="https://www.dubarryboots.com/accessories-gifts/sale-accessories"
+                                               style="color: #d6931d;">
+                                                Clearance                                             </a>
+                                        </li>
+                                                                    </ul>
+                            </div>
+                        </div>
+                                    </li>
+
+
+            
+            
+                            <li class="top has-children pages hidden-lg hidden-md">
+                    <a href="javascript: void(0)">
+                        Buy Dubarry                    </a>
+
+                    <div class="mega-menu dropdown">
+                        <div class="container">
+                            <ul>
+                                                                                                    <li>
+                                        <a href="https://www.dubarryboots.com/buy-dubarry/latest-catalogue">
+                                            Catalogue                                        </a>
+                                    </li>
+                                                                    <li>
+                                        <a href="https://www.dubarryboots.com/buy-dubarry/for-her">
+                                            Gift Certificate                                        </a>
+                                    </li>
+                                                                    <li>
+                                        <a href="https://www.dubarryboots.com/buy-dubarry/dubarry-stores">
+                                            Dubarry Stores                                        </a>
+                                    </li>
+                                                                    <li>
+                                        <a href="https://www.dubarryboots.com/buy-dubarry/dubarry-events">
+                                            Dubarry Events                                        </a>
+                                    </li>
+                                                                    <li>
+                                        <a href="https://www.dubarryboots.com/buy-dubarry/where-can-i-buy-dubarry-in-the-uk">
+                                            Where Can I Buy Dubarry in the UK?                                        </a>
+                                    </li>
+                                                                    <li>
+                                        <a href="https://www.dubarryboots.com/buy-dubarry/customer-service">
+                                            Customer Service                                        </a>
+                                    </li>
+                                                            </ul>
+                        </div>
+                    </div>
+                </li>
+                            <li class="top has-children pages hidden-lg hidden-md">
+                    <a href="javascript: void(0)">
+                        Footwear Care                    </a>
+
+                    <div class="mega-menu dropdown">
+                        <div class="container">
+                            <ul>
+                                                                                                    <li>
+                                        <a href="https://www.dubarryboots.com/footwear-care/repair-dubarry-boots-shoes">
+                                            Repair Dubarry Boots & Shoes                                        </a>
+                                    </li>
+                                                                    <li>
+                                        <a href="https://www.dubarryboots.com/footwear-care/warranty">
+                                            Warranty                                        </a>
+                                    </li>
+                                                                    <li>
+                                        <a href="https://www.dubarryboots.com/footwear-care/leather-care">
+                                            Footwear & Leather Care                                        </a>
+                                    </li>
+                                                                    <li>
+                                        <a href="https://www.dubarryboots.com/footwear-care/care-products">
+                                            Care Products                                        </a>
+                                    </li>
+                                                                    <li>
+                                        <a href="https://www.dubarryboots.com/footwear-care/knot-your-dubarry-s">
+                                            Knot your Dubarry Videos                                        </a>
+                                    </li>
+                                                                    <li>
+                                        <a href="https://www.dubarryboots.com/footwear-care/customer-service">
+                                            Customer Service                                        </a>
+                                    </li>
+                                                            </ul>
+                        </div>
+                    </div>
+                </li>
+                    </ul>
+    </div>
+</div></div>
+
+<div class="main-nav-container">
+    <div class="main-nav hidden-xs">
+        <nav class="container">
+            <ul class="top">
+                
+<div class="menu">
+    <div class="container">
+        <a class="toggle-menu visible-xs visible-sm" href="#">
+            <i class="fa fa-bars"></i>
+            <i class="fa fa-times"></i>
+            Menu        </a>
+        <ul id="main-menu" data-check-transforms>
+            <li class="visible-affix hidden-sm hidden-xs">
+                <a href="/" title="" class="logo">
+                    <img src="https://www.dubarryboots.com/skin/frontend/dubarry/default/images/dubarry-logo.png" alt=""/>
+                </a>
+            </li>
+                                                            <li class="top has-children pages">
+                    <a href="javascript: void(0)"
+                       style="color: #d6931d;">
+                        Clearance                     </a>
+                                                                <div class="mega-menu dropdown">
+                            <div class="container">
+                                <ul>
+                                                                                                                    <li>
+                                            <a href="https://www.dubarryboots.com/winter-sale-uk/womens-footwear"
+                                               style="color: #d6931d;">
+                                                Women's Footwear                                            </a>
+                                        </li>
+                                                                                                                    <li>
+                                            <a href="https://www.dubarryboots.com/winter-sale-uk/womens-clothing"
+                                               style="color: #d6931d;">
+                                                Women's Clothing                                            </a>
+                                        </li>
+                                                                                                                    <li>
+                                            <a href="https://www.dubarryboots.com/winter-sale-uk/mens-footwear"
+                                               style="color: #d6931d;">
+                                                Men’s Footwear                                            </a>
+                                        </li>
+                                         <li><a href="https://www.dubarryboots.com/winter-sale-uk/mens-clothing"
+                                               style="color: #d6931d;">
+                                                Men's Clothing                                            </a>
+                                        </li>
+                                                                                                                    <li>
+                                            <a href="https://www.dubarryboots.com/winter-sale-uk/mens-clothing"
+                                               style="color: #d6931d;">
+                                                Men's Clothing                                            </a>
+                                        </li>
+                                                                                                                    <li>
+                                            <a href="https://www.dubarryboots.com/winter-sale-uk/bags-accessories-sale"
+                                               style="color: #d6931d;">
+                                                Bags & Accessories                                            </a>
+                                        </li>
+
+                                         <a href="https://www.dubarryboots.com/winter-sale-uk/bags-accessories-sale"
+                                               style="color: #d6931d;">
+                                                #LiveLoveDubarry</a>
+                                        </li>
+                                                                                                                    <li>
+                                            <a href="https://www.dubarryboots.com/winter-sale-uk/tweed-sale"
+                                               style="color: #d6931d;">
+                                                Tweed                                            </a>
+                                        </li>
+                                                                                                                    <li>
+                                            <a href="https://www.dubarryboots.com/winter-sale-uk/outerwear"
+                                               style="color: #d6931d;">
+                                                Outerwear                                            </a>
+                                        </li>
+                                                                    </ul>
+                            </div>
+                        </div>
+                                    </li>
+                                                            <li class="top has-children pages">
+                    <a href="javascript: void(0)"
+                       style="color: inherit;">
+                        Women’s Footwear                    </a>
+                                                                <div class="mega-menu dropdown">
+                            <div class="container">
+                                <ul>
+                                                                                                                    <li>
+                                            <a href="https://www.dubarryboots.com/womens-footwear/country-boots"
+                                               style="color: inherit;">
+                                                Country Boots                                            </a>
+                                        </li>
+                                                                                                                    <li>
+                                            <a href="https://www.dubarryboots.com/womens-footwear/sailing-boots"
+                                               style="color: inherit;">
+                                                Sailing Boots                                            </a>
+                                        </li>
+                                                                                                                    <li>
+                                            <a href="https://www.dubarryboots.com/womens-footwear/moccasins"
+                                               style="color: inherit;">
+                                                Moccasins                                            </a>
+                                        </li>
+                                                                                                                    <li>
+                                            <a href="https://www.dubarryboots.com/womens-footwear/womens-aquasport-shoes"
+                                               style="color: inherit;">
+                                                Aquasport Shoes                                            </a>
+                                        </li>
+                                                                                                                    <li>
+                                            <a href="https://www.dubarryboots.com/womens-footwear/sale-womens-footwear"
+                                               style="color: #d6931d;">
+                                                Clearance                                             </a>
+                                        </li>
+                                                                    </ul>
+                            </div>
+                        </div>
+                                    </li>
+                                                            <li class="top has-children pages">
+                    <a href="javascript: void(0)"
+                       style="color: inherit;">
+                        Women’s Clothing                    </a>
+                                                                <div class="mega-menu dropdown">
+                            <div class="container">
+                                <ul>
+                                                                                                                    <li>
+                                            <a href="https://www.dubarryboots.com/womens-clothing/weatherproof-jackets"
+                                               style="color: inherit;">
+                                                Weatherproof Jackets                                            </a>
+                                        </li>
+                                                                                                                    <li>
+                                            <a href="https://www.dubarryboots.com/womens-clothing/gilets"
+                                               style="color: inherit;">
+                                                Gilets                                            </a>
+                                        </li>
+                                                                                                                    <li>
+                                            <a href="https://www.dubarryboots.com/womens-clothing/tweed-jackets"
+                                               style="color: inherit;">
+                                                Tweed Jackets                                            </a>
+                                        </li>
+                                                                                                                    <li>
+                                            <a href="https://www.dubarryboots.com/womens-clothing/tweed-skirts"
+                                               style="color: inherit;">
+                                                Tweed Skirts                                            </a>
+                                        </li>
+                                                                                                                    <li>
+                                            <a href="https://www.dubarryboots.com/womens-clothing/linen"
+                                               style="color: inherit;">
+                                                Linen                                            </a>
+                                        </li>
+                                                                                                                    <li>
+                                            <a href="https://www.dubarryboots.com/womens-clothing/shirts"
+                                               style="color: inherit;">
+                                                Shirts                                            </a>
+                                        </li>
+                                                                                                                    <li>
+                                            <a href="https://www.dubarryboots.com/womens-clothing/trousers"
+                                               style="color: inherit;">
+                                                Shorts & Trousers                                            </a>
+                                        </li>
+                                                                                                                    <li>
+                                            <a href="https://www.dubarryboots.com/womens-clothing/knitwear"
+                                               style="color: inherit;">
+                                                Knitwear                                            </a>
+                                        </li>
+                                                                                                                    <li>
+                                            <a href="https://www.dubarryboots.com/womens-clothing/tops"
+                                               style="color: inherit;">
+                                                Tops                                            </a>
+                                        </li>
+                                                                                                                    <li>
+                                            <a href="https://www.dubarryboots.com/womens-clothing/sale-uk"
+                                               style="color: #d6931d;">
+                                                Clearance                                             </a>
+                                        </li>
+                                                                    </ul>
+                            </div>
+                        </div>
+                                    </li>
+                                                            <li class="top has-children pages">
+                    <a href="javascript: void(0)"
+                       style="color: inherit;">
+                        Men’s Footwear                    </a>
+                                                                <div class="mega-menu dropdown">
+                            <div class="container">
+                                <ul>
+                                                                                                                    <li>
+                                            <a href="https://www.dubarryboots.com/mens-footwear/country-boots"
+                                               style="color: inherit;">
+                                                Country Boots                                            </a>
+                                        </li>
+                                                                                                                    <li>
+                                            <a href="https://www.dubarryboots.com/mens-footwear/goodyear-welted"
+                                               style="color: inherit;">
+                                                Goodyear Welted                                            </a>
+                                        </li>
+                                                                                                                    <li>
+                                            <a href="https://www.dubarryboots.com/mens-footwear/sailing-boots"
+                                               style="color: inherit;">
+                                                Sailing Boots                                            </a>
+                                        </li>
+                                                                                                                    <li>
+                                            <a href="https://www.dubarryboots.com/mens-footwear/deck-shoes"
+                                               style="color: inherit;">
+                                                Deck Shoes                                            </a>
+                                        </li>
+                                                                                                                    <li>
+                                            <a href="https://www.dubarryboots.com/mens-footwear/mens-aquasport-shoes"
+                                               style="color: inherit;">
+                                                Aquasport Shoes                                            </a>
+                                        </li>
+                                                                                                                    <li>
+                                            <a href="https://www.dubarryboots.com/mens-footwear/sale-mens-footwear"
+                                               style="color: #d6931d;">
+                                                Clearance                                             </a>
+                                        </li>
+                                                                    </ul>
+                            </div>
+                        </div>
+                                    </li>
+                                                            <li class="top has-children pages">
+                    <a href="javascript: void(0)"
+                       style="color: inherit;">
+                        Men’s Clothing                    </a>
+                         
+                                                                <div class="mega-menu dropdown">
+                            <div class="container">
+                                <ul>
+                                                                                                                    <li>
+                                            <a href="https://www.dubarryboots.com/mens-clothing/mens-weatherproof-jackets"
+                                               style="color: inherit;">
+                                                Weatherproof Jackets                                            </a>
+                                        </li>
+                                                                                                                    <li>
+                                            <a href="https://www.dubarryboots.com/mens-clothing/mens-gilets"
+                                               style="color: inherit;">
+                                                Gilets                                            </a>
+                                        </li>
+                                                                                                                    <li>
+                                            <a href="https://www.dubarryboots.com/mens-clothing/tweed-jackets"
+                                               style="color: inherit;">
+                                                Tweed Jackets                                            </a>
+                                        </li>
+                                                                                                                    <li>
+                                            <a href="https://www.dubarryboots.com/mens-clothing/knitwear"
+                                               style="color: inherit;">
+                                                Knitwear                                            </a>
+                                        </li>
+                                                                                                                    <li>
+                                            <a href="https://www.dubarryboots.com/mens-clothing/shirts"
+                                               style="color: inherit;">
+                                                Shirts                                            </a>
+                                        </li>
+                                                                                                                    <li>
+                                            <a href="https://www.dubarryboots.com/mens-clothing/polo-shirts"
+                                               style="color: inherit;">
+                                                Polo Shirts                                            </a>
+                                        </li>
+                                                                                                                    <li>
+                                            <a href="https://www.dubarryboots.com/mens-clothing/shorts"
+                                               style="color: inherit;">
+                                                Shorts                                            </a>
+                                        </li>
+                                                                                                                    <li>
+                                            <a href="https://www.dubarryboots.com/mens-clothing/sale-mens-clothing"
+                                               style="color: #d6931d;">
+                                                Clearance                                             </a>
+                                        </li>
+                                                                    </ul>
+                            </div>
+                        </div>
+                                    </li>
+                                                            <li class="top has-children pages">
+                    <a href="javascript: void(0)"
+                       style="color: inherit;">
+                        Bags & Accessories                    </a>
+                                                                <div class="mega-menu dropdown">
+                            <div class="container">
+                                <ul>
+                                                                                                                    <li>
+                                            <a href="https://www.dubarryboots.com/accessories-gifts/womens-leather-purses"
+                                               style="color: inherit;">
+                                                Women’s Leather Purses                                            </a>
+                                        </li>
+                                                                                                                    <li>
+                                            <a href="https://www.dubarryboots.com/accessories-gifts/womens-leather-bags"
+                                               style="color: inherit;">
+                                                Women’s Leather Bags                                            </a>
+                                        </li>
+                                                                                                                    <li>
+                                            <a href="https://www.dubarryboots.com/accessories-gifts/womens-leather-belts"
+                                               style="color: inherit;">
+                                                Women’s Leather Belts                                            </a>
+                                        </li>
+                                                                                                                    <li>
+                                            <a href="https://www.dubarryboots.com/accessories-gifts/womens-hats"
+                                               style="color: inherit;">
+                                                Women’s Hats & Scarves                                            </a>
+                                        </li>
+                                                                                                                    <li>
+                                            <a href="https://www.dubarryboots.com/accessories-gifts/womens-fur-accessories"
+                                               style="color: inherit;">
+                                                Women’s Faux Fur Accessories                                            </a>
+                                        </li>
+                                                                                                                    <li>
+                                            <a href="https://www.dubarryboots.com/accessories-gifts/mens-leather-bags"
+                                               style="color: inherit;">
+                                                Men’s Leather Bags                                            </a>
+                                        </li>
+                                                                                                                    <li>
+                                            <a href="https://www.dubarryboots.com/accessories-gifts/mens-leather-belts"
+                                               style="color: inherit;">
+                                                Men’s Leather Belts                                            </a>
+                                        </li>
+                                                                                                                    <li>
+                                            <a href="https://www.dubarryboots.com/accessories-gifts/mens-leather-accessories"
+                                               style="color: inherit;">
+                                                Men’s Leather Accessories                                            </a>
+                                        </li>
+                                                                                                                    <li>
+                                            <a href="https://www.dubarryboots.com/accessories-gifts/mens-hats"
+                                               style="color: inherit;">
+                                                Men’s Hats                                            </a>
+                                        </li>
+                                                                                                                    <li>
+                                            <a href="https://www.dubarryboots.com/accessories-gifts/leather-luggage"
+                                               style="color: inherit;">
+                                                Leather Luggage                                            </a>
+                                        </li>
+                                                                                                                    <li>
+                                            <a href="https://www.dubarryboots.com/accessories-gifts/socks"
+                                               style="color: inherit;">
+                                                Socks                                            </a>
+                                        </li>
+                                                                                                                    <li>
+                                            <a href="https://www.dubarryboots.com/accessories-gifts/boot-accessories"
+                                               style="color: inherit;">
+                                                Boot Accessories                                            </a>
+                                        </li>
+                                                                                                                    <li>
+                                            <a href="https://www.dubarryboots.com/accessories-gifts/leather-care"
+                                               style="color: inherit;">
+                                                Care Products                                            </a>
+                                        </li>
+                                                                                                                    <li>
+                                            <a href="https://www.dubarryboots.com/accessories-gifts/dubarry-umbrellas"
+                                               style="color: inherit;">
+                                                Umbrellas                                            </a>
+                                        </li>
+                                                                                                                    <li>
+                                            <a href="https://www.dubarryboots.com/accessories-gifts/dog-accessories"
+                                               style="color: inherit;">
+                                                Dog Accessories                                            </a>
+                                        </li>
+                                                                                                                    <li>
+                                            <a href="https://www.dubarryboots.com/accessories-gifts/sale-accessories"
+                                               style="color: #d6931d;">
+                                                Clearance                                             </a>
+
+                                        </li>
+
+                                        
+
+                                                                    </ul>
+                                                                    <li id="myNavbarTab" class="top has-children pages">
+                    <a href="lookbook.html"
+                       style="color: inherit;">
+                        #LiveLoveDubarry                  </a></li>
+                            </div>
+                        </div>
+                                    </li>
+
+
+
+            
+            
+                            <li class="top has-children pages hidden-lg hidden-md">
+                    <a href="javascript: void(0)">
+                        Buy Dubarry                    </a>
+
+                    <div class="mega-menu dropdown">
+                        <div class="container">
+                            <ul>
+                                                                                                    <li>
+                                        <a href="https://www.dubarryboots.com/buy-dubarry/latest-catalogue">
+                                            Catalogue                                        </a>
+                                    </li>
+                                                                    <li>
+                                        <a href="https://www.dubarryboots.com/buy-dubarry/for-her">
+                                            Gift Certificate                                        </a>
+                                    </li>
+                                                                    <li>
+                                        <a href="https://www.dubarryboots.com/buy-dubarry/dubarry-stores">
+                                            Dubarry Stores                                        </a>
+                                    </li>
+                                                                    <li>
+                                        <a href="https://www.dubarryboots.com/buy-dubarry/dubarry-events">
+                                            Dubarry Events                                        </a>
+                                    </li>
+                                                                    <li>
+                                        <a href="https://www.dubarryboots.com/buy-dubarry/where-can-i-buy-dubarry-in-the-uk">
+                                            Where Can I Buy Dubarry in the UK?                                        </a>
+                                    </li>
+                                                                    <li>
+                                        <a href="https://www.dubarryboots.com/buy-dubarry/customer-service">
+                                            Customer Service                                        </a>
+                                    </li>
+                                                            </ul>
+                        </div>
+                    </div>
+                </li>
+                            <li class="top has-children pages hidden-lg hidden-md">
+                    <a href="javascript: void(0)">
+                        Footwear Care                    </a>
+
+                    <div class="mega-menu dropdown">
+                        <div class="container">
+                            <ul>
+                                                                                                    <li>
+                                        <a href="https://www.dubarryboots.com/footwear-care/repair-dubarry-boots-shoes">
+                                            Repair Dubarry Boots & Shoes                                        </a>
+                                    </li>
+                                                                    <li>
+                                        <a href="https://www.dubarryboots.com/footwear-care/warranty">
+                                            Warranty                                        </a>
+                                    </li>
+                                                                    <li>
+                                        <a href="https://www.dubarryboots.com/footwear-care/leather-care">
+                                            Footwear & Leather Care                                        </a>
+                                    </li>
+                                                                    <li>
+                                        <a href="https://www.dubarryboots.com/footwear-care/care-products">
+                                            Care Products                                        </a>
+                                    </li>
+                                                                    <li>
+                                        <a href="https://www.dubarryboots.com/footwear-care/knot-your-dubarry-s">
+                                            Knot your Dubarry Videos                                        </a>
+                                    </li>
+                                                                    <li>
+                                        <a href="https://www.dubarryboots.com/footwear-care/customer-service">
+                                            Customer Service                                        </a>
+                                    </li>
+                                                            </ul>
+                        </div>
+                    </div>
+                </li>
+                    </ul>
+    </div>
+</div>            </ul>
+        </nav>
+    </div>
+</div>
+
+<script>
+    if (jQuery(window).width() > 767) {
+        jQuery('.main-nav').affix({
+            offset: {
+                top: jQuery(".main-nav").offset().top,
+            }
+        });
+    }
+</script>    
+            
+
+    <div class="container">
+            <noscript>
+        <div class="global-site-notice noscript">
+            <div class="notice-inner">
+                <p>
+                    <strong>JavaScript seems to be disabled in your browser.</strong><br />
+                    You must have JavaScript enabled in your browser to utilize the functionality of this website.                </p>
+            </div>
+        </div>
+    </noscript>
+
+        <div class="layout layout-2-cols">
+            <div role="main">
+                                <div class="widget widget-static-block"></div>
+    <div class="page-title">
+        <h1>Dubarry of Ireland, Women &amp; Mens Clothing &amp; Footwear UK</h1>
+    </div>
+<div class="std"><p>Dubarry of Ireland, Women &amp; Mens Clothing &amp; Footwear</p></div><div class="widget widget-static-block"></div>
+<div class="widget widget-static-block"></div>
+            </div>
+            <aside role="complementary">
+                <div class="paypal-logo">
+    <a href="#" title="Additional Options" onclick="javascript:window.open('https://www.paypal.com/gb/cgi-bin/webscr?cmd=xpt/Marketing/popup/OLCWhatIsPayPal-outside','paypal','width=600,height=350,left=0,top=0,location=no,status=yes,scrollbars=yes,resizable=yes'); return false;"><img src="https://www.paypalobjects.com/en_GB/i/bnr/bnr_nowAccepting_150x60.gif" alt="Additional Options" title="Additional Options" /></a>
+</div>
+<div class="sagepaysuite-logo">
+	<a href="https://www.sagepay.com/" target="_blank"><img src="https://www.dubarryboots.com/skin/frontend/base/default/sagepaysuite/images/secured-by-sage-pay.png" alt="Ebizmarts - SagePay" /></a>
+</div>            </aside>
+        </div>
+    </div>
+    
+    
+<div class="hero-banner">	
+	<div class="slidecontainer">
+						<div class="slide">
+			<div class="image">
+								<div class="banner-controls">
+					<a class="banner-left" href="#"><img src="https://www.dubarryboots.com/skin/frontend/dubarry/default/images/arrow-left.png" /></a>
+                	<a class="banner-right" href="#"><img src="https://www.dubarryboots.com/skin/frontend/dubarry/default/images/arrow-right.png" /></a>
+				</div>
+													<img class="main-img" src="https://www.dubarryboots.com/media/hero/image/9f42f3b417f2723621ebaa9cd066ff6f.jpg" alt="" />
+																																									 												<a href="javascript:void(0);" 
+							class="hotspot quick-view-link" 
+							data-sku="3936-women"
+							data-check-res
+							style="left: 25.5%; top: 28.89%;"></a>
+																		</div>
+			<div class="slide-info bottom right">
+				<h3>Women's Footwear</h3>
+				<p>Shop our wide selection of womens boot styles, including our signature Galway boot.</p>
+                				    <a href="/womens-footwear/country-boots">Shop Now</a>
+                			</div>
+		</div>
+							<div class="slide">
+			<div class="image">
+								<div class="banner-controls">
+					<a class="banner-left" href="#"><img src="https://www.dubarryboots.com/skin/frontend/dubarry/default/images/arrow-left.png" /></a>
+                	<a class="banner-right" href="#"><img src="https://www.dubarryboots.com/skin/frontend/dubarry/default/images/arrow-right.png" /></a>
+				</div>
+													<img src="https://www.dubarryboots.com/skin/frontend/dubarry/default/images/lazyload-hero.png" class="main-img lazyload" data-src="https://www.dubarryboots.com/media/hero/image/ebecedf07510b7555c2647172cb41a42.jpg" alt="" />
+																																				 												<a href="javascript:void(0);" 
+							class="hotspot quick-view-link" 
+							data-sku="3527"
+							data-check-res
+							style="left: 76.38%; top: 47.33%;"></a>
+																		</div>
+			<div class="slide-info top left">
+				<h3>Women's Clothing</h3>
+				<p>Explore the women's Spring/Summer collection.</p>
+                				    <a href="/womens-clothing">Shop Now</a>
+                			</div>
+		</div>
+							<div class="slide">
+			<div class="image">
+								<div class="banner-controls">
+					<a class="banner-left" href="#"><img src="https://www.dubarryboots.com/skin/frontend/dubarry/default/images/arrow-left.png" /></a>
+                	<a class="banner-right" href="#"><img src="https://www.dubarryboots.com/skin/frontend/dubarry/default/images/arrow-right.png" /></a>
+				</div>
+													<img src="https://www.dubarryboots.com/skin/frontend/dubarry/default/images/lazyload-hero.png" class="main-img lazyload" data-src="https://www.dubarryboots.com/media/hero/image/572a463b3cd899185150356224b513fa.jpg" alt="" />
+																																				 												<a href="javascript:void(0);" 
+							class="hotspot quick-view-link" 
+							data-sku="3751"
+							data-check-res
+							style="left: 48.38%; top: 57.11%;"></a>
+																		</div>
+			<div class="slide-info top right">
+				<h3>Men's Footwear</h3>
+				<p>Explore the men's footwear collection</p>
+                				    <a href="/mens-footwear">Shop Now</a>
+                			</div>
+		</div>
+							<div class="slide">
+			<div class="image">
+								<div class="banner-controls">
+					<a class="banner-left" href="#"><img src="https://www.dubarryboots.com/skin/frontend/dubarry/default/images/arrow-left.png" /></a>
+                	<a class="banner-right" href="#"><img src="https://www.dubarryboots.com/skin/frontend/dubarry/default/images/arrow-right.png" /></a>
+				</div>
+													<img src="https://www.dubarryboots.com/skin/frontend/dubarry/default/images/lazyload-hero.png" class="main-img lazyload" data-src="https://www.dubarryboots.com/media/hero/image/6b8652edbb929e81b594121408ecbdf8.jpg" alt="" />
+																																				 												<a href="javascript:void(0);" 
+							class="hotspot quick-view-link" 
+							data-sku="3583"
+							data-check-res
+							style="left: 56.13%; top: 45.78%;"></a>
+																		</div>
+			<div class="slide-info top right">
+				<h3>Men's Clothing</h3>
+				<p>Explore the men's Spring/Summer Collection</p>
+                				    <a href="/mens-clothing">Shop Now</a>
+                			</div>
+		</div>
+							<div class="slide">
+			<div class="image">
+								<div class="banner-controls">
+					<a class="banner-left" href="#"><img src="https://www.dubarryboots.com/skin/frontend/dubarry/default/images/arrow-left.png" /></a>
+                	<a class="banner-right" href="#"><img src="https://www.dubarryboots.com/skin/frontend/dubarry/default/images/arrow-right.png" /></a>
+				</div>
+													<img src="https://www.dubarryboots.com/skin/frontend/dubarry/default/images/lazyload-hero.png" class="main-img lazyload" data-src="https://www.dubarryboots.com/media/hero/image/3beed4007c74991a8d142b8629fe8416.jpg" alt="" />
+																																				 												<a href="javascript:void(0);" 
+							class="hotspot quick-view-link" 
+							data-sku="9447"
+							data-check-res
+							style="left: 63.13%; top: 64%;"></a>
+																													 												<a href="javascript:void(0);" 
+							class="hotspot quick-view-link" 
+							data-sku="3739"
+							data-check-res
+							style="left: 36%; top: 24.67%;"></a>
+																		</div>
+			<div class="slide-info top right">
+				<h3>Bags & Accessories</h3>
+				<p>Shop our bags & accessories collection</p>
+                				    <a href="/accessories-gifts">Shop Now</a>
+                			</div>
+		</div>
+				</div>
+</div>
+
+<script>
+	var hero_hotspots = {
+											                                            "3936-women" : {"valid":true,"id":"11368","title":"Dubarry Cork  Boot","summary":"<p>Cork, from Dubarry, the lifestyle brand of choice for both country and city wear, is a classic Chelsea boot, with ...","configurable":true,"url":"https:\/\/www.dubarryboots.com\/cork-boot","action":"https:\/\/www.dubarryboots.com\/checkout\/cart\/add\/uenc\/aHR0cHM6Ly93d3cuZHViYXJyeWJvb3RzLmNvbS8,\/product\/11368\/form_key\/uuYycLuz6QMmHxSc\/","pricejson":"{\"priceFormat\":{\"pattern\":\"\\u00a3%s\",\"precision\":2,\"requiredPrecision\":2,\"decimalSymbol\":\".\",\"groupSymbol\":\",\",\"groupLength\":3,\"integerRequired\":1},\"includeTax\":\"true\",\"showIncludeTax\":true,\"showBothPrices\":false,\"idSuffix\":\"_clone\",\"oldPlusDisposition\":0,\"plusDisposition\":0,\"plusDispositionTax\":0,\"oldMinusDisposition\":0,\"minusDisposition\":0,\"productId\":\"11368\",\"productPrice\":249,\"productOldPrice\":249,\"priceInclTax\":249,\"priceExclTax\":249,\"skipCalculate\":1,\"defaultTax\":20,\"currentTax\":20,\"tierPrices\":[],\"tierPricesInclTax\":[],\"swatchPrices\":null}","gallery":["https:\/\/www.dubarryboots.com\/media\/catalog\/product\/cache\/1\/lifestyle_image\/750x1000\/9df78eab33525d08d6e5fb8d27136e95\/w\/o\/womens_country_boot-_chelsea_boot-3936-62-cork-pair.jpg","https:\/\/www.dubarryboots.com\/media\/catalog\/product\/cache\/1\/image\/750x1000\/9df78eab33525d08d6e5fb8d27136e95\/3\/9\/3945-15-limerick-sole_3.jpg","https:\/\/www.dubarryboots.com\/media\/catalog\/product\/cache\/1\/image\/750x1000\/9df78eab33525d08d6e5fb8d27136e95\/w\/o\/womens_country_boot-_chelsea_boot-3936-95-cork.jpg","https:\/\/www.dubarryboots.com\/media\/catalog\/product\/cache\/1\/image\/750x1000\/9df78eab33525d08d6e5fb8d27136e95\/w\/o\/womens_country_boot-_chelsea_boot-3936-62-cork.jpg"],"colourData":"{\"339\":{\"main\":\"https:\\\/\\\/www.dubarryboots.com\\\/media\\\/catalog\\\/product\\\/cache\\\/1\\\/image\\\/750x1000\\\/9df78eab33525d08d6e5fb8d27136e95\\\/w\\\/o\\\/womens_country_boot-_chelsea_boot-3936-61-cork_2.jpg\",\"zoomed\":\"https:\\\/\\\/www.dubarryboots.com\\\/media\\\/catalog\\\/product\\\/cache\\\/1\\\/image\\\/900x1200\\\/9df78eab33525d08d6e5fb8d27136e95\\\/w\\\/o\\\/womens_country_boot-_chelsea_boot-3936-61-cork_2.jpg\"},\"207\":{\"main\":\"https:\\\/\\\/www.dubarryboots.com\\\/media\\\/catalog\\\/product\\\/cache\\\/1\\\/image\\\/750x1000\\\/9df78eab33525d08d6e5fb8d27136e95\\\/w\\\/o\\\/womens_country_boot-_chelsea_boot-3936-62-cork_3_1.jpg\",\"zoomed\":\"https:\\\/\\\/www.dubarryboots.com\\\/media\\\/catalog\\\/product\\\/cache\\\/1\\\/image\\\/900x1200\\\/9df78eab33525d08d6e5fb8d27136e95\\\/w\\\/o\\\/womens_country_boot-_chelsea_boot-3936-62-cork_3_1.jpg\"},\"90\":{\"main\":\"https:\\\/\\\/www.dubarryboots.com\\\/media\\\/catalog\\\/product\\\/cache\\\/1\\\/image\\\/750x1000\\\/9df78eab33525d08d6e5fb8d27136e95\\\/3\\\/9\\\/393695cork.jpg\",\"zoomed\":\"https:\\\/\\\/www.dubarryboots.com\\\/media\\\/catalog\\\/product\\\/cache\\\/1\\\/image\\\/900x1200\\\/9df78eab33525d08d6e5fb8d27136e95\\\/3\\\/9\\\/393695cork.jpg\"},\"71\":{\"main\":\"https:\\\/\\\/www.dubarryboots.com\\\/media\\\/catalog\\\/product\\\/cache\\\/1\\\/image\\\/750x1000\\\/9df78eab33525d08d6e5fb8d27136e95\\\/3\\\/9\\\/3936-01-black-cork-v2_2__8.jpg\",\"zoomed\":\"https:\\\/\\\/www.dubarryboots.com\\\/media\\\/catalog\\\/product\\\/cache\\\/1\\\/image\\\/900x1200\\\/9df78eab33525d08d6e5fb8d27136e95\\\/3\\\/9\\\/3936-01-black-cork-v2_2__8.jpg\"}}","attributes":[{"id":"1314","label":"Colour","use_default":"0","position":"0","values":[{"product_super_attribute_id":"1314","value_index":"71","label":"Black","default_label":"Black","store_label":"Black","is_percent":0,"pricing_value":null,"use_default_value":true,"order":12},{"product_super_attribute_id":"1314","value_index":"90","label":"Chestnut","default_label":"Chestnut","store_label":"Chestnut","is_percent":0,"pricing_value":null,"use_default_value":true,"order":46},{"product_super_attribute_id":"1314","value_index":"207","label":"Cigar","default_label":"Cigar","store_label":"Cigar","is_percent":0,"pricing_value":null,"use_default_value":true,"order":50},{"product_super_attribute_id":"1314","value_index":"339","label":"Russet","default_label":"Russet","store_label":"Russet","is_percent":0,"pricing_value":null,"use_default_value":true,"order":232}],"attribute_id":"130","attribute_code":"colorswatch_color","frontend_label":"Colour","store_label":"Colour"},{"id":"1315","label":"Sizes","use_default":"0","position":"2","values":[{"product_super_attribute_id":"1315","value_index":"43","label":"Euro 35","default_label":"Euro 35","store_label":"Euro 35","is_percent":0,"pricing_value":null,"use_default_value":true,"order":343},{"product_super_attribute_id":"1315","value_index":"44","label":"Euro 36","default_label":"Euro 36","store_label":"Euro 36","is_percent":0,"pricing_value":null,"use_default_value":true,"order":371},{"product_super_attribute_id":"1315","value_index":"45","label":"Euro 37","default_label":"Euro 37","store_label":"Euro 37","is_percent":0,"pricing_value":null,"use_default_value":true,"order":372},{"product_super_attribute_id":"1315","value_index":"46","label":"Euro 38","default_label":"Euro 38","store_label":"Euro 38","is_percent":0,"pricing_value":null,"use_default_value":true,"order":373},{"product_super_attribute_id":"1315","value_index":"47","label":"Euro 39","default_label":"Euro 39","store_label":"Euro 39","is_percent":0,"pricing_value":null,"use_default_value":true,"order":374},{"product_super_attribute_id":"1315","value_index":"48","label":"Euro 40","default_label":"Euro 40","store_label":"Euro 40","is_percent":0,"pricing_value":null,"use_default_value":true,"order":375},{"product_super_attribute_id":"1315","value_index":"49","label":"Euro 41","default_label":"Euro 41","store_label":"Euro 41","is_percent":0,"pricing_value":null,"use_default_value":true,"order":376},{"product_super_attribute_id":"1315","value_index":"50","label":"Euro 42","default_label":"Euro 42","store_label":"Euro 42","is_percent":0,"pricing_value":null,"use_default_value":true,"order":377},{"product_super_attribute_id":"1315","value_index":"51","label":"Euro 43","default_label":"Euro 43","store_label":"Euro 43","is_percent":0,"pricing_value":null,"use_default_value":true,"order":378}],"attribute_id":"129","attribute_code":"dubarry_sizes","frontend_label":"Sizes","store_label":"Sizes"}],"configjson":"{\"attributes\":{\"130\":{\"id\":\"130\",\"code\":\"colorswatch_color\",\"label\":\"Colour\",\"options\":[{\"id\":\"71\",\"label\":\"Black\",\"price\":\"0\",\"oldPrice\":\"0\",\"option_position\":null,\"order\":12,\"products\":[\"15667\",\"15668\",\"15669\",\"15670\",\"15671\",\"15672\",\"15673\",\"15674\",\"15675\"]},{\"id\":\"90\",\"label\":\"Chestnut\",\"price\":\"0\",\"oldPrice\":\"0\",\"option_position\":null,\"order\":46,\"products\":[\"11397\",\"11398\",\"11399\",\"11400\",\"11401\",\"11402\",\"11403\",\"11404\",\"11405\"]},{\"id\":\"207\",\"label\":\"Cigar\",\"price\":\"0\",\"oldPrice\":\"0\",\"option_position\":null,\"order\":50,\"products\":[\"11388\",\"11389\",\"11390\",\"11391\",\"11392\",\"11393\",\"11394\",\"11395\",\"11396\"]},{\"id\":\"339\",\"label\":\"Russet\",\"price\":\"0\",\"oldPrice\":\"0\",\"option_position\":null,\"order\":232,\"products\":[\"11379\",\"11380\",\"11381\",\"11382\",\"11383\",\"11384\",\"11385\",\"11386\",\"11387\"]}]},\"129\":{\"id\":\"129\",\"code\":\"dubarry_sizes\",\"label\":\"Sizes\",\"options\":[{\"id\":\"43\",\"label\":\"Euro 35\",\"price\":\"0\",\"oldPrice\":\"0\",\"option_position\":null,\"order\":343,\"products\":[\"11379\",\"11388\",\"11397\",\"15667\"]},{\"id\":\"44\",\"label\":\"Euro 36\",\"price\":\"0\",\"oldPrice\":\"0\",\"option_position\":null,\"order\":371,\"products\":[\"11380\",\"11389\",\"11398\",\"15668\"]},{\"id\":\"45\",\"label\":\"Euro 37\",\"price\":\"0\",\"oldPrice\":\"0\",\"option_position\":null,\"order\":372,\"products\":[\"11381\",\"11390\",\"11399\",\"15669\"]},{\"id\":\"46\",\"label\":\"Euro 38\",\"price\":\"0\",\"oldPrice\":\"0\",\"option_position\":null,\"order\":373,\"products\":[\"11382\",\"11391\",\"11400\",\"15670\"]},{\"id\":\"47\",\"label\":\"Euro 39\",\"price\":\"0\",\"oldPrice\":\"0\",\"option_position\":null,\"order\":374,\"products\":[\"11383\",\"11392\",\"11401\",\"15671\"]},{\"id\":\"48\",\"label\":\"Euro 40\",\"price\":\"0\",\"oldPrice\":\"0\",\"option_position\":null,\"order\":375,\"products\":[\"11384\",\"11393\",\"11402\",\"15672\"]},{\"id\":\"49\",\"label\":\"Euro 41\",\"price\":\"0\",\"oldPrice\":\"0\",\"option_position\":null,\"order\":376,\"products\":[\"11385\",\"11394\",\"11403\",\"15673\"]},{\"id\":\"50\",\"label\":\"Euro 42\",\"price\":\"0\",\"oldPrice\":\"0\",\"option_position\":null,\"order\":377,\"products\":[\"11386\",\"11395\",\"11404\",\"15674\"]},{\"id\":\"51\",\"label\":\"Euro 43\",\"price\":\"0\",\"oldPrice\":\"0\",\"option_position\":null,\"order\":378,\"products\":[\"11387\",\"11396\",\"11405\",\"15675\"]}]}},\"template\":\"\\u00a3#{price}\",\"basePrice\":\"249\",\"oldPrice\":\"249\",\"productId\":\"11368\",\"chooseText\":\"Choose an Option...\",\"taxConfig\":{\"includeTax\":true,\"showIncludeTax\":true,\"showBothPrices\":false,\"defaultTax\":20,\"currentTax\":20,\"inclTaxTitle\":\"Incl. Tax\"}}"},
+            													                                            "3527" : {"valid":true,"id":"17826","title":"Dubarry Aran Jacket","summary":"A women\u2019s waterproof jacket, with a handy roll away hood, Aran offers stylish protection from the elements. This jack...","configurable":true,"url":"https:\/\/www.dubarryboots.com\/dubarry-aran-jacket","action":"https:\/\/www.dubarryboots.com\/checkout\/cart\/add\/uenc\/aHR0cHM6Ly93d3cuZHViYXJyeWJvb3RzLmNvbS8,\/product\/17826\/form_key\/uuYycLuz6QMmHxSc\/","pricejson":"{\"priceFormat\":{\"pattern\":\"\\u00a3%s\",\"precision\":2,\"requiredPrecision\":2,\"decimalSymbol\":\".\",\"groupSymbol\":\",\",\"groupLength\":3,\"integerRequired\":1},\"includeTax\":\"true\",\"showIncludeTax\":true,\"showBothPrices\":false,\"idSuffix\":\"_clone\",\"oldPlusDisposition\":0,\"plusDisposition\":0,\"plusDispositionTax\":0,\"oldMinusDisposition\":0,\"minusDisposition\":0,\"productId\":\"17826\",\"productPrice\":149,\"productOldPrice\":149,\"priceInclTax\":149,\"priceExclTax\":149,\"skipCalculate\":1,\"defaultTax\":20,\"currentTax\":20,\"tierPrices\":[],\"tierPricesInclTax\":[],\"swatchPrices\":null}","gallery":["https:\/\/www.dubarryboots.com\/media\/catalog\/product\/cache\/1\/lifestyle_image\/750x1000\/9df78eab33525d08d6e5fb8d27136e95\/3\/5\/3527-58-aran_02.jpg","https:\/\/www.dubarryboots.com\/media\/catalog\/product\/cache\/1\/image\/750x1000\/9df78eab33525d08d6e5fb8d27136e95\/3\/5\/3527-03-aran-02.jpg","https:\/\/www.dubarryboots.com\/media\/catalog\/product\/cache\/1\/image\/750x1000\/9df78eab33525d08d6e5fb8d27136e95\/3\/5\/3527-58-aran_01.jpg","https:\/\/www.dubarryboots.com\/media\/catalog\/product\/cache\/1\/image\/750x1000\/9df78eab33525d08d6e5fb8d27136e95\/3\/5\/3527-07-aran_02.jpg","https:\/\/www.dubarryboots.com\/media\/catalog\/product\/cache\/1\/image\/750x1000\/9df78eab33525d08d6e5fb8d27136e95\/3\/5\/3527-58-aran_3.jpg"],"colourData":"{\"136\":{\"main\":\"https:\\\/\\\/www.dubarryboots.com\\\/media\\\/catalog\\\/product\\\/cache\\\/1\\\/image\\\/750x1000\\\/9df78eab33525d08d6e5fb8d27136e95\\\/3\\\/5\\\/3527-03-aran-copy.jpg\",\"zoomed\":\"https:\\\/\\\/www.dubarryboots.com\\\/media\\\/catalog\\\/product\\\/cache\\\/1\\\/image\\\/900x1200\\\/9df78eab33525d08d6e5fb8d27136e95\\\/3\\\/5\\\/3527-03-aran-copy.jpg\"},\"214\":{\"main\":\"https:\\\/\\\/www.dubarryboots.com\\\/media\\\/catalog\\\/product\\\/cache\\\/1\\\/image\\\/750x1000\\\/9df78eab33525d08d6e5fb8d27136e95\\\/3\\\/5\\\/3527-07-aran_1.jpg\",\"zoomed\":\"https:\\\/\\\/www.dubarryboots.com\\\/media\\\/catalog\\\/product\\\/cache\\\/1\\\/image\\\/900x1200\\\/9df78eab33525d08d6e5fb8d27136e95\\\/3\\\/5\\\/3527-07-aran_1.jpg\"},\"478\":{\"main\":\"https:\\\/\\\/www.dubarryboots.com\\\/media\\\/catalog\\\/product\\\/cache\\\/1\\\/image\\\/750x1000\\\/9df78eab33525d08d6e5fb8d27136e95\\\/3\\\/5\\\/3527-58-aran.jpg\",\"zoomed\":\"https:\\\/\\\/www.dubarryboots.com\\\/media\\\/catalog\\\/product\\\/cache\\\/1\\\/image\\\/900x1200\\\/9df78eab33525d08d6e5fb8d27136e95\\\/3\\\/5\\\/3527-58-aran.jpg\"}}","attributes":[{"id":"2803","label":"Colour","use_default":"0","position":"0","values":[{"product_super_attribute_id":"2803","value_index":"478","label":"Royal Blue","default_label":"Royal Blue","store_label":"Royal Blue","is_percent":0,"pricing_value":null,"use_default_value":true,"order":229},{"product_super_attribute_id":"2803","value_index":"214","label":"Tan","default_label":"Tan","store_label":"Tan","is_percent":0,"pricing_value":null,"use_default_value":true,"order":256},{"product_super_attribute_id":"2803","value_index":"136","label":"Navy","default_label":"Navy","store_label":"Navy","is_percent":0,"pricing_value":null,"use_default_value":true,"order":290}],"attribute_id":"130","attribute_code":"colorswatch_color","frontend_label":"Colour","store_label":"Colour"},{"id":"2804","label":"Sizes","use_default":"0","position":"1","values":[{"product_super_attribute_id":"2804","value_index":"42","label":"Euro 34","default_label":"Euro 34","store_label":"Euro 34","is_percent":0,"pricing_value":null,"use_default_value":true,"order":340},{"product_super_attribute_id":"2804","value_index":"44","label":"Euro 36","default_label":"Euro 36","store_label":"Euro 36","is_percent":0,"pricing_value":null,"use_default_value":true,"order":371},{"product_super_attribute_id":"2804","value_index":"46","label":"Euro 38","default_label":"Euro 38","store_label":"Euro 38","is_percent":0,"pricing_value":null,"use_default_value":true,"order":373},{"product_super_attribute_id":"2804","value_index":"48","label":"Euro 40","default_label":"Euro 40","store_label":"Euro 40","is_percent":0,"pricing_value":null,"use_default_value":true,"order":375},{"product_super_attribute_id":"2804","value_index":"50","label":"Euro 42","default_label":"Euro 42","store_label":"Euro 42","is_percent":0,"pricing_value":null,"use_default_value":true,"order":377},{"product_super_attribute_id":"2804","value_index":"52","label":"Euro 44","default_label":"Euro 44","store_label":"Euro 44","is_percent":0,"pricing_value":null,"use_default_value":true,"order":379}],"attribute_id":"129","attribute_code":"dubarry_sizes","frontend_label":"Sizes","store_label":"Sizes"}],"configjson":"{\"attributes\":{\"130\":{\"id\":\"130\",\"code\":\"colorswatch_color\",\"label\":\"Colour\",\"options\":[{\"id\":\"478\",\"label\":\"Royal Blue\",\"price\":\"0\",\"oldPrice\":\"0\",\"option_position\":null,\"order\":229,\"products\":[\"21030\",\"21032\",\"21033\",\"21034\",\"21035\",\"21036\"]},{\"id\":\"214\",\"label\":\"Tan\",\"price\":\"0\",\"oldPrice\":\"0\",\"option_position\":null,\"order\":256,\"products\":[\"21025\",\"21026\",\"21027\",\"21028\",\"21029\"]},{\"id\":\"136\",\"label\":\"Navy\",\"price\":\"0\",\"oldPrice\":\"0\",\"option_position\":null,\"order\":290,\"products\":[\"17827\",\"17828\",\"17829\",\"17830\",\"17831\",\"17832\"]}]},\"129\":{\"id\":\"129\",\"code\":\"dubarry_sizes\",\"label\":\"Sizes\",\"options\":[{\"id\":\"42\",\"label\":\"Euro 34\",\"price\":\"0\",\"oldPrice\":\"0\",\"option_position\":null,\"order\":340,\"products\":[\"17827\",\"21030\"]},{\"id\":\"44\",\"label\":\"Euro 36\",\"price\":\"0\",\"oldPrice\":\"0\",\"option_position\":null,\"order\":371,\"products\":[\"17828\",\"21025\",\"21032\"]},{\"id\":\"46\",\"label\":\"Euro 38\",\"price\":\"0\",\"oldPrice\":\"0\",\"option_position\":null,\"order\":373,\"products\":[\"17829\",\"21026\",\"21033\"]},{\"id\":\"48\",\"label\":\"Euro 40\",\"price\":\"0\",\"oldPrice\":\"0\",\"option_position\":null,\"order\":375,\"products\":[\"17830\",\"21027\",\"21034\"]},{\"id\":\"50\",\"label\":\"Euro 42\",\"price\":\"0\",\"oldPrice\":\"0\",\"option_position\":null,\"order\":377,\"products\":[\"17831\",\"21028\",\"21035\"]},{\"id\":\"52\",\"label\":\"Euro 44\",\"price\":\"0\",\"oldPrice\":\"0\",\"option_position\":null,\"order\":379,\"products\":[\"17832\",\"21029\",\"21036\"]}]}},\"template\":\"\\u00a3#{price}\",\"basePrice\":\"149\",\"oldPrice\":\"149\",\"productId\":\"17826\",\"chooseText\":\"Choose an Option...\",\"taxConfig\":{\"includeTax\":true,\"showIncludeTax\":true,\"showBothPrices\":false,\"defaultTax\":20,\"currentTax\":20,\"inclTaxTitle\":\"Incl. Tax\"}}"},
+            													                                            "3751" : {"valid":true,"id":"20536","title":"Nevis Moccasin","summary":"The Nevis moccasin for men, is both practical and stylish. Genuine suede leather finished with water resistant, DryFa...","configurable":true,"url":"https:\/\/www.dubarryboots.com\/nevis-moccasin","action":"https:\/\/www.dubarryboots.com\/checkout\/cart\/add\/uenc\/aHR0cHM6Ly93d3cuZHViYXJyeWJvb3RzLmNvbS8,\/product\/20536\/form_key\/uuYycLuz6QMmHxSc\/","pricejson":"{\"priceFormat\":{\"pattern\":\"\\u00a3%s\",\"precision\":2,\"requiredPrecision\":2,\"decimalSymbol\":\".\",\"groupSymbol\":\",\",\"groupLength\":3,\"integerRequired\":1},\"includeTax\":\"true\",\"showIncludeTax\":true,\"showBothPrices\":false,\"idSuffix\":\"_clone\",\"oldPlusDisposition\":0,\"plusDisposition\":0,\"plusDispositionTax\":0,\"oldMinusDisposition\":0,\"minusDisposition\":0,\"productId\":\"20536\",\"productPrice\":139,\"productOldPrice\":139,\"priceInclTax\":139,\"priceExclTax\":139,\"skipCalculate\":1,\"defaultTax\":20,\"currentTax\":20,\"tierPrices\":[],\"tierPricesInclTax\":[],\"swatchPrices\":null}","gallery":["https:\/\/www.dubarryboots.com\/media\/catalog\/product\/cache\/1\/lifestyle_image\/750x1000\/9df78eab33525d08d6e5fb8d27136e95\/3\/7\/3751-43-nevis_01.jpg","https:\/\/www.dubarryboots.com\/media\/catalog\/product\/cache\/1\/image\/750x1000\/9df78eab33525d08d6e5fb8d27136e95\/3\/7\/3751-63-nevis_01.jpg","https:\/\/www.dubarryboots.com\/media\/catalog\/product\/cache\/1\/image\/750x1000\/9df78eab33525d08d6e5fb8d27136e95\/3\/7\/3751-09-nevis_01.jpg","https:\/\/www.dubarryboots.com\/media\/catalog\/product\/cache\/1\/image\/750x1000\/9df78eab33525d08d6e5fb8d27136e95\/3\/7\/3751-43-nevis_01_1.jpg"],"colourData":"{\"155\":{\"main\":\"https:\\\/\\\/www.dubarryboots.com\\\/media\\\/catalog\\\/product\\\/cache\\\/1\\\/image\\\/750x1000\\\/9df78eab33525d08d6e5fb8d27136e95\\\/3\\\/7\\\/3751-09-nevis_01_1.jpg\",\"zoomed\":\"https:\\\/\\\/www.dubarryboots.com\\\/media\\\/catalog\\\/product\\\/cache\\\/1\\\/image\\\/900x1200\\\/9df78eab33525d08d6e5fb8d27136e95\\\/3\\\/7\\\/3751-09-nevis_01_1.jpg\"},\"312\":{\"main\":\"https:\\\/\\\/www.dubarryboots.com\\\/media\\\/catalog\\\/product\\\/cache\\\/1\\\/image\\\/750x1000\\\/9df78eab33525d08d6e5fb8d27136e95\\\/3\\\/7\\\/3751-43-nevis_01_1_2.jpg\",\"zoomed\":\"https:\\\/\\\/www.dubarryboots.com\\\/media\\\/catalog\\\/product\\\/cache\\\/1\\\/image\\\/900x1200\\\/9df78eab33525d08d6e5fb8d27136e95\\\/3\\\/7\\\/3751-43-nevis_01_1_2.jpg\"},\"105\":{\"main\":\"https:\\\/\\\/www.dubarryboots.com\\\/media\\\/catalog\\\/product\\\/cache\\\/1\\\/image\\\/750x1000\\\/9df78eab33525d08d6e5fb8d27136e95\\\/3\\\/7\\\/3751-63-nevis_01_1.jpg\",\"zoomed\":\"https:\\\/\\\/www.dubarryboots.com\\\/media\\\/catalog\\\/product\\\/cache\\\/1\\\/image\\\/900x1200\\\/9df78eab33525d08d6e5fb8d27136e95\\\/3\\\/7\\\/3751-63-nevis_01_1.jpg\"}}","attributes":[{"id":"3430","label":"Colour","use_default":"0","position":"0","values":[{"product_super_attribute_id":"3430","value_index":"105","label":"Denim","default_label":"Denim","store_label":"Denim","is_percent":0,"pricing_value":null,"use_default_value":true,"order":73},{"product_super_attribute_id":"3430","value_index":"312","label":"French Navy","default_label":"French Navy","store_label":"French Navy","is_percent":0,"pricing_value":null,"use_default_value":true,"order":91},{"product_super_attribute_id":"3430","value_index":"155","label":"Olive","default_label":"Olive","store_label":"Olive","is_percent":0,"pricing_value":null,"use_default_value":true,"order":187}],"attribute_id":"130","attribute_code":"colorswatch_color","frontend_label":"Colour","store_label":"Colour"},{"id":"3431","label":"Sizes","use_default":"0","position":"1","values":[{"product_super_attribute_id":"3431","value_index":"49","label":"Euro 41","default_label":"Euro 41","store_label":"Euro 41","is_percent":0,"pricing_value":null,"use_default_value":true,"order":376},{"product_super_attribute_id":"3431","value_index":"50","label":"Euro 42","default_label":"Euro 42","store_label":"Euro 42","is_percent":0,"pricing_value":null,"use_default_value":true,"order":377},{"product_super_attribute_id":"3431","value_index":"51","label":"Euro 43","default_label":"Euro 43","store_label":"Euro 43","is_percent":0,"pricing_value":null,"use_default_value":true,"order":378},{"product_super_attribute_id":"3431","value_index":"52","label":"Euro 44","default_label":"Euro 44","store_label":"Euro 44","is_percent":0,"pricing_value":null,"use_default_value":true,"order":379},{"product_super_attribute_id":"3431","value_index":"53","label":"Euro 45","default_label":"Euro 45","store_label":"Euro 45","is_percent":0,"pricing_value":null,"use_default_value":true,"order":380},{"product_super_attribute_id":"3431","value_index":"54","label":"Euro 46","default_label":"Euro 46","store_label":"Euro 46","is_percent":0,"pricing_value":null,"use_default_value":true,"order":381},{"product_super_attribute_id":"3431","value_index":"55","label":"Euro 47","default_label":"Euro 47","store_label":"Euro 47","is_percent":0,"pricing_value":null,"use_default_value":true,"order":382}],"attribute_id":"129","attribute_code":"dubarry_sizes","frontend_label":"Sizes","store_label":"Sizes"}],"configjson":"{\"attributes\":{\"130\":{\"id\":\"130\",\"code\":\"colorswatch_color\",\"label\":\"Colour\",\"options\":[{\"id\":\"105\",\"label\":\"Denim\",\"price\":\"0\",\"oldPrice\":\"0\",\"option_position\":null,\"order\":73,\"products\":[\"20568\",\"20570\",\"20571\",\"20573\",\"20574\",\"20575\"]},{\"id\":\"312\",\"label\":\"French Navy\",\"price\":\"0\",\"oldPrice\":\"0\",\"option_position\":null,\"order\":91,\"products\":[\"20558\",\"20559\",\"20561\",\"20562\",\"20563\"]},{\"id\":\"155\",\"label\":\"Olive\",\"price\":\"0\",\"oldPrice\":\"0\",\"option_position\":null,\"order\":187,\"products\":[\"20539\",\"20544\",\"20547\",\"20549\",\"20550\",\"20553\"]}]},\"129\":{\"id\":\"129\",\"code\":\"dubarry_sizes\",\"label\":\"Sizes\",\"options\":[{\"id\":\"49\",\"label\":\"Euro 41\",\"price\":\"0\",\"oldPrice\":\"0\",\"option_position\":null,\"order\":376,\"products\":[\"20539\",\"20568\"]},{\"id\":\"50\",\"label\":\"Euro 42\",\"price\":\"0\",\"oldPrice\":\"0\",\"option_position\":null,\"order\":377,\"products\":[\"20544\",\"20558\",\"20570\"]},{\"id\":\"51\",\"label\":\"Euro 43\",\"price\":\"0\",\"oldPrice\":\"0\",\"option_position\":null,\"order\":378,\"products\":[\"20547\",\"20559\",\"20571\"]},{\"id\":\"52\",\"label\":\"Euro 44\",\"price\":\"0\",\"oldPrice\":\"0\",\"option_position\":null,\"order\":379,\"products\":[\"20549\",\"20561\",\"20573\"]},{\"id\":\"53\",\"label\":\"Euro 45\",\"price\":\"0\",\"oldPrice\":\"0\",\"option_position\":null,\"order\":380,\"products\":[\"20550\",\"20562\",\"20574\"]},{\"id\":\"54\",\"label\":\"Euro 46\",\"price\":\"0\",\"oldPrice\":\"0\",\"option_position\":null,\"order\":381,\"products\":[\"20553\",\"20563\",\"20575\"]}]}},\"template\":\"\\u00a3#{price}\",\"basePrice\":\"139\",\"oldPrice\":\"139\",\"productId\":\"20536\",\"chooseText\":\"Choose an Option...\",\"taxConfig\":{\"includeTax\":true,\"showIncludeTax\":true,\"showBothPrices\":false,\"defaultTax\":20,\"currentTax\":20,\"inclTaxTitle\":\"Incl. Tax\"}}"},
+            													                                            "3583" : {"valid":true,"id":"20756","title":"Ballycumber Jacket","summary":"A versatile, modern jacket inspired by sailing wear with a fashionable finish. The Ballycumber is made with waterproo...","configurable":true,"url":"https:\/\/www.dubarryboots.com\/ballycumber-jacket","action":"https:\/\/www.dubarryboots.com\/checkout\/cart\/add\/uenc\/aHR0cHM6Ly93d3cuZHViYXJyeWJvb3RzLmNvbS8,\/product\/20756\/form_key\/uuYycLuz6QMmHxSc\/","pricejson":"{\"priceFormat\":{\"pattern\":\"\\u00a3%s\",\"precision\":2,\"requiredPrecision\":2,\"decimalSymbol\":\".\",\"groupSymbol\":\",\",\"groupLength\":3,\"integerRequired\":1},\"includeTax\":\"true\",\"showIncludeTax\":true,\"showBothPrices\":false,\"idSuffix\":\"_clone\",\"oldPlusDisposition\":0,\"plusDisposition\":0,\"plusDispositionTax\":0,\"oldMinusDisposition\":0,\"minusDisposition\":0,\"productId\":\"20756\",\"productPrice\":179,\"productOldPrice\":179,\"priceInclTax\":179,\"priceExclTax\":179,\"skipCalculate\":1,\"defaultTax\":20,\"currentTax\":20,\"tierPrices\":[],\"tierPricesInclTax\":[],\"swatchPrices\":null}","gallery":["https:\/\/www.dubarryboots.com\/media\/catalog\/product\/cache\/1\/lifestyle_image\/750x1000\/9df78eab33525d08d6e5fb8d27136e95\/3\/5\/3583-24-ballycumber_02.jpg","https:\/\/www.dubarryboots.com\/media\/catalog\/product\/cache\/1\/image\/750x1000\/9df78eab33525d08d6e5fb8d27136e95\/3\/5\/3583-03-ballycumber_01.jpg","https:\/\/www.dubarryboots.com\/media\/catalog\/product\/cache\/1\/image\/750x1000\/9df78eab33525d08d6e5fb8d27136e95\/3\/5\/3583-24-ballycumber_01.jpg","https:\/\/www.dubarryboots.com\/media\/catalog\/product\/cache\/1\/image\/750x1000\/9df78eab33525d08d6e5fb8d27136e95\/3\/5\/3583-51-ballycumber_01.jpg","https:\/\/www.dubarryboots.com\/media\/catalog\/product\/cache\/1\/image\/750x1000\/9df78eab33525d08d6e5fb8d27136e95\/3\/5\/3583-58-ballycumber_01_1.jpg","https:\/\/www.dubarryboots.com\/media\/catalog\/product\/cache\/1\/image\/750x1000\/9df78eab33525d08d6e5fb8d27136e95\/3\/5\/3583-58-ballycumber_6.jpg","https:\/\/www.dubarryboots.com\/media\/catalog\/product\/cache\/1\/image\/750x1000\/9df78eab33525d08d6e5fb8d27136e95\/3\/5\/3583-58-ballycumber_02.jpg","https:\/\/www.dubarryboots.com\/media\/catalog\/product\/cache\/1\/image\/750x1000\/9df78eab33525d08d6e5fb8d27136e95\/3\/5\/3583-24-ballycumber_03.jpg"],"colourData":"{\"136\":{\"main\":\"https:\\\/\\\/www.dubarryboots.com\\\/media\\\/catalog\\\/product\\\/cache\\\/1\\\/image\\\/750x1000\\\/9df78eab33525d08d6e5fb8d27136e95\\\/3\\\/5\\\/3583-03-ballycumber_2.jpg\",\"zoomed\":\"https:\\\/\\\/www.dubarryboots.com\\\/media\\\/catalog\\\/product\\\/cache\\\/1\\\/image\\\/900x1200\\\/9df78eab33525d08d6e5fb8d27136e95\\\/3\\\/5\\\/3583-03-ballycumber_2.jpg\"},\"476\":{\"main\":\"https:\\\/\\\/www.dubarryboots.com\\\/media\\\/catalog\\\/product\\\/cache\\\/1\\\/image\\\/750x1000\\\/9df78eab33525d08d6e5fb8d27136e95\\\/3\\\/5\\\/3583-24-ballycumber_2.jpg\",\"zoomed\":\"https:\\\/\\\/www.dubarryboots.com\\\/media\\\/catalog\\\/product\\\/cache\\\/1\\\/image\\\/900x1200\\\/9df78eab33525d08d6e5fb8d27136e95\\\/3\\\/5\\\/3583-24-ballycumber_2.jpg\"},\"478\":{\"main\":\"https:\\\/\\\/www.dubarryboots.com\\\/media\\\/catalog\\\/product\\\/cache\\\/1\\\/image\\\/750x1000\\\/9df78eab33525d08d6e5fb8d27136e95\\\/3\\\/5\\\/3583-58-ballycumber_2.jpg\",\"zoomed\":\"https:\\\/\\\/www.dubarryboots.com\\\/media\\\/catalog\\\/product\\\/cache\\\/1\\\/image\\\/900x1200\\\/9df78eab33525d08d6e5fb8d27136e95\\\/3\\\/5\\\/3583-58-ballycumber_2.jpg\"},\"477\":{\"main\":\"https:\\\/\\\/www.dubarryboots.com\\\/media\\\/catalog\\\/product\\\/cache\\\/1\\\/image\\\/750x1000\\\/9df78eab33525d08d6e5fb8d27136e95\\\/3\\\/5\\\/3583-51-ballycumber_5.jpg\",\"zoomed\":\"https:\\\/\\\/www.dubarryboots.com\\\/media\\\/catalog\\\/product\\\/cache\\\/1\\\/image\\\/900x1200\\\/9df78eab33525d08d6e5fb8d27136e95\\\/3\\\/5\\\/3583-51-ballycumber_5.jpg\"}}","attributes":[{"id":"3454","label":"Colour","use_default":"0","position":"0","values":[{"product_super_attribute_id":"3454","value_index":"477","label":"Poppy","default_label":"Poppy","store_label":"Poppy","is_percent":0,"pricing_value":null,"use_default_value":true,"order":213},{"product_super_attribute_id":"3454","value_index":"478","label":"Royal Blue","default_label":"Royal Blue","store_label":"Royal Blue","is_percent":0,"pricing_value":null,"use_default_value":true,"order":229},{"product_super_attribute_id":"3454","value_index":"476","label":"Sunflower","default_label":"Sunflower","store_label":"Sunflower","is_percent":0,"pricing_value":null,"use_default_value":true,"order":253},{"product_super_attribute_id":"3454","value_index":"136","label":"Navy","default_label":"Navy","store_label":"Navy","is_percent":0,"pricing_value":null,"use_default_value":true,"order":290}],"attribute_id":"130","attribute_code":"colorswatch_color","frontend_label":"Colour","store_label":"Colour"},{"id":"3455","label":"Sizes","use_default":"0","position":"1","values":[{"product_super_attribute_id":"3455","value_index":"62","label":"S","default_label":"S","store_label":"S","is_percent":0,"pricing_value":null,"use_default_value":true,"order":390},{"product_super_attribute_id":"3455","value_index":"63","label":"M","default_label":"M","store_label":"M","is_percent":0,"pricing_value":null,"use_default_value":true,"order":391},{"product_super_attribute_id":"3455","value_index":"64","label":"L","default_label":"L","store_label":"L","is_percent":0,"pricing_value":null,"use_default_value":true,"order":392},{"product_super_attribute_id":"3455","value_index":"65","label":"XL","default_label":"XL","store_label":"XL","is_percent":0,"pricing_value":null,"use_default_value":true,"order":393},{"product_super_attribute_id":"3455","value_index":"66","label":"XXL","default_label":"XXL","store_label":"XXL","is_percent":0,"pricing_value":null,"use_default_value":true,"order":394},{"product_super_attribute_id":"3455","value_index":"67","label":"XXXL","default_label":"XXXL","store_label":"XXXL","is_percent":0,"pricing_value":null,"use_default_value":true,"order":395}],"attribute_id":"129","attribute_code":"dubarry_sizes","frontend_label":"Sizes","store_label":"Sizes"}],"configjson":"{\"attributes\":{\"130\":{\"id\":\"130\",\"code\":\"colorswatch_color\",\"label\":\"Colour\",\"options\":[{\"id\":\"477\",\"label\":\"Poppy\",\"price\":\"0\",\"oldPrice\":\"0\",\"option_position\":null,\"order\":213,\"products\":[\"20780\",\"20782\",\"20784\",\"20785\",\"20786\"]},{\"id\":\"478\",\"label\":\"Royal Blue\",\"price\":\"0\",\"oldPrice\":\"0\",\"option_position\":null,\"order\":229,\"products\":[\"20789\",\"20790\",\"20791\",\"20792\",\"20793\"]},{\"id\":\"476\",\"label\":\"Sunflower\",\"price\":\"0\",\"oldPrice\":\"0\",\"option_position\":null,\"order\":253,\"products\":[\"20768\",\"20770\",\"20771\",\"20774\",\"20776\"]},{\"id\":\"136\",\"label\":\"Navy\",\"price\":\"0\",\"oldPrice\":\"0\",\"option_position\":null,\"order\":290,\"products\":[\"20758\",\"20759\",\"20762\",\"20763\",\"20764\"]}]},\"129\":{\"id\":\"129\",\"code\":\"dubarry_sizes\",\"label\":\"Sizes\",\"options\":[{\"id\":\"62\",\"label\":\"S\",\"price\":\"0\",\"oldPrice\":\"0\",\"option_position\":null,\"order\":390,\"products\":[]},{\"id\":\"63\",\"label\":\"M\",\"price\":\"0\",\"oldPrice\":\"0\",\"option_position\":null,\"order\":391,\"products\":[\"20758\",\"20768\",\"20789\",\"20780\"]},{\"id\":\"64\",\"label\":\"L\",\"price\":\"0\",\"oldPrice\":\"0\",\"option_position\":null,\"order\":392,\"products\":[\"20759\",\"20770\",\"20790\",\"20782\"]},{\"id\":\"65\",\"label\":\"XL\",\"price\":\"0\",\"oldPrice\":\"0\",\"option_position\":null,\"order\":393,\"products\":[\"20762\",\"20771\",\"20791\",\"20784\"]},{\"id\":\"66\",\"label\":\"XXL\",\"price\":\"0\",\"oldPrice\":\"0\",\"option_position\":null,\"order\":394,\"products\":[\"20763\",\"20774\",\"20792\",\"20785\"]},{\"id\":\"67\",\"label\":\"XXXL\",\"price\":\"0\",\"oldPrice\":\"0\",\"option_position\":null,\"order\":395,\"products\":[\"20764\",\"20776\",\"20793\",\"20786\"]}]}},\"template\":\"\\u00a3#{price}\",\"basePrice\":\"179\",\"oldPrice\":\"179\",\"productId\":\"20756\",\"chooseText\":\"Choose an Option...\",\"taxConfig\":{\"includeTax\":true,\"showIncludeTax\":true,\"showBothPrices\":false,\"defaultTax\":20,\"currentTax\":20,\"inclTaxTitle\":\"Incl. Tax\"}}"},
+            													                                            "9447" : {"valid":true,"id":"18068","title":"Dubarry Arcadia tote bag","summary":"Dubarry\u2019s Arcadia leather bag for women, is a tote bag in colours to coordinate with Dubarry\u2019s new women\u2019s deck shoes...","configurable":true,"url":"https:\/\/www.dubarryboots.com\/dubarry-arcadia-tote-bag","action":"https:\/\/www.dubarryboots.com\/checkout\/cart\/add\/uenc\/aHR0cHM6Ly93d3cuZHViYXJyeWJvb3RzLmNvbS8,\/product\/18068\/form_key\/uuYycLuz6QMmHxSc\/","pricejson":"{\"priceFormat\":{\"pattern\":\"\\u00a3%s\",\"precision\":2,\"requiredPrecision\":2,\"decimalSymbol\":\".\",\"groupSymbol\":\",\",\"groupLength\":3,\"integerRequired\":1},\"includeTax\":\"true\",\"showIncludeTax\":true,\"showBothPrices\":false,\"idSuffix\":\"_clone\",\"oldPlusDisposition\":0,\"plusDisposition\":0,\"plusDispositionTax\":0,\"oldMinusDisposition\":0,\"minusDisposition\":0,\"productId\":\"18068\",\"productPrice\":199,\"productOldPrice\":199,\"priceInclTax\":199,\"priceExclTax\":199,\"skipCalculate\":1,\"defaultTax\":20,\"currentTax\":20,\"tierPrices\":[],\"tierPricesInclTax\":[],\"swatchPrices\":null}","gallery":["https:\/\/www.dubarryboots.com\/media\/catalog\/product\/cache\/1\/lifestyle_image\/750x1000\/9df78eab33525d08d6e5fb8d27136e95\/9\/4\/9447-08-arcadia.jpg","https:\/\/www.dubarryboots.com\/media\/catalog\/product\/cache\/1\/image\/750x1000\/9df78eab33525d08d6e5fb8d27136e95\/9\/4\/9447-03-arcadia_2_.jpg","https:\/\/www.dubarryboots.com\/media\/catalog\/product\/cache\/1\/image\/750x1000\/9df78eab33525d08d6e5fb8d27136e95\/9\/4\/9447-08-arcadia_2_.jpg","https:\/\/www.dubarryboots.com\/media\/catalog\/product\/cache\/1\/image\/750x1000\/9df78eab33525d08d6e5fb8d27136e95\/9\/4\/9447-07-arcadia-01.jpg","https:\/\/www.dubarryboots.com\/media\/catalog\/product\/cache\/1\/image\/750x1000\/9df78eab33525d08d6e5fb8d27136e95\/9\/4\/9447-14-arcadia-01.jpg"],"colourData":"{\"136\":{\"main\":\"https:\\\/\\\/www.dubarryboots.com\\\/media\\\/catalog\\\/product\\\/cache\\\/1\\\/image\\\/750x1000\\\/9df78eab33525d08d6e5fb8d27136e95\\\/9\\\/4\\\/9447-03-arcadia_2__1.jpg\",\"zoomed\":\"https:\\\/\\\/www.dubarryboots.com\\\/media\\\/catalog\\\/product\\\/cache\\\/1\\\/image\\\/900x1200\\\/9df78eab33525d08d6e5fb8d27136e95\\\/9\\\/4\\\/9447-03-arcadia_2__1.jpg\"},\"214\":{\"main\":\"https:\\\/\\\/www.dubarryboots.com\\\/media\\\/catalog\\\/product\\\/cache\\\/1\\\/image\\\/750x1000\\\/9df78eab33525d08d6e5fb8d27136e95\\\/9\\\/4\\\/9447-07-arcadia-01_1.jpg\",\"zoomed\":\"https:\\\/\\\/www.dubarryboots.com\\\/media\\\/catalog\\\/product\\\/cache\\\/1\\\/image\\\/900x1200\\\/9df78eab33525d08d6e5fb8d27136e95\\\/9\\\/4\\\/9447-07-arcadia-01_1.jpg\"},\"206\":{\"main\":\"https:\\\/\\\/www.dubarryboots.com\\\/media\\\/catalog\\\/product\\\/cache\\\/1\\\/image\\\/750x1000\\\/9df78eab33525d08d6e5fb8d27136e95\\\/9\\\/4\\\/9447-08-arcadia_2__1.jpg\",\"zoomed\":\"https:\\\/\\\/www.dubarryboots.com\\\/media\\\/catalog\\\/product\\\/cache\\\/1\\\/image\\\/900x1200\\\/9df78eab33525d08d6e5fb8d27136e95\\\/9\\\/4\\\/9447-08-arcadia_2__1.jpg\"},\"101\":{\"main\":\"https:\\\/\\\/www.dubarryboots.com\\\/media\\\/catalog\\\/product\\\/cache\\\/1\\\/image\\\/750x1000\\\/9df78eab33525d08d6e5fb8d27136e95\\\/9\\\/4\\\/9447-14-arcadia-01_2.jpg\",\"zoomed\":\"https:\\\/\\\/www.dubarryboots.com\\\/media\\\/catalog\\\/product\\\/cache\\\/1\\\/image\\\/900x1200\\\/9df78eab33525d08d6e5fb8d27136e95\\\/9\\\/4\\\/9447-14-arcadia-01_2.jpg\"},\"478\":{\"main\":\"https:\\\/\\\/www.dubarryboots.com\\\/media\\\/catalog\\\/product\\\/cache\\\/1\\\/image\\\/750x1000\\\/9df78eab33525d08d6e5fb8d27136e95\\\/9\\\/4\\\/9447-58-arcadia_1.jpg\",\"zoomed\":\"https:\\\/\\\/www.dubarryboots.com\\\/media\\\/catalog\\\/product\\\/cache\\\/1\\\/image\\\/900x1200\\\/9df78eab33525d08d6e5fb8d27136e95\\\/9\\\/4\\\/9447-58-arcadia_1.jpg\"}}","attributes":[{"id":"2828","label":"Colour","use_default":"0","position":"0","values":[{"product_super_attribute_id":"2828","value_index":"206","label":"Cobalt","default_label":"Cobalt","store_label":"Cobalt","is_percent":0,"pricing_value":null,"use_default_value":true,"order":53},{"product_super_attribute_id":"2828","value_index":"101","label":"Coral","default_label":"Coral","store_label":"Coral","is_percent":0,"pricing_value":null,"use_default_value":true,"order":64},{"product_super_attribute_id":"2828","value_index":"478","label":"Royal Blue","default_label":"Royal Blue","store_label":"Royal Blue","is_percent":0,"pricing_value":null,"use_default_value":true,"order":229},{"product_super_attribute_id":"2828","value_index":"214","label":"Tan","default_label":"Tan","store_label":"Tan","is_percent":0,"pricing_value":null,"use_default_value":true,"order":256},{"product_super_attribute_id":"2828","value_index":"136","label":"Navy","default_label":"Navy","store_label":"Navy","is_percent":0,"pricing_value":null,"use_default_value":true,"order":290}],"attribute_id":"130","attribute_code":"colorswatch_color","frontend_label":"Colour","store_label":"Colour"},{"id":"2827","label":"Size","use_default":"0","position":"1","values":[{"product_super_attribute_id":"2827","value_index":"200","label":"One size","default_label":"One size","store_label":"One size","is_percent":0,"pricing_value":null,"use_default_value":true,"order":293}],"attribute_id":"136","attribute_code":"one_size","frontend_label":"Size","store_label":"Size"}],"configjson":"{\"attributes\":{\"130\":{\"id\":\"130\",\"code\":\"colorswatch_color\",\"label\":\"Colour\",\"options\":[{\"id\":\"206\",\"label\":\"Cobalt\",\"price\":\"0\",\"oldPrice\":\"0\",\"option_position\":null,\"order\":53,\"products\":[\"18071\"]},{\"id\":\"101\",\"label\":\"Coral\",\"price\":\"0\",\"oldPrice\":\"0\",\"option_position\":null,\"order\":64,\"products\":[\"18072\"]},{\"id\":\"478\",\"label\":\"Royal Blue\",\"price\":\"0\",\"oldPrice\":\"0\",\"option_position\":null,\"order\":229,\"products\":[\"21122\"]},{\"id\":\"214\",\"label\":\"Tan\",\"price\":\"0\",\"oldPrice\":\"0\",\"option_position\":null,\"order\":256,\"products\":[\"18070\"]},{\"id\":\"136\",\"label\":\"Navy\",\"price\":\"0\",\"oldPrice\":\"0\",\"option_position\":null,\"order\":290,\"products\":[\"18069\"]}]},\"136\":{\"id\":\"136\",\"code\":\"one_size\",\"label\":\"Size\",\"options\":[{\"id\":\"200\",\"label\":\"One size\",\"price\":\"0\",\"oldPrice\":\"0\",\"option_position\":null,\"order\":293,\"products\":[\"18069\",\"18070\",\"18071\",\"18072\",\"21122\"]}]}},\"template\":\"\\u00a3#{price}\",\"basePrice\":\"199\",\"oldPrice\":\"199\",\"productId\":\"18068\",\"chooseText\":\"Choose an Option...\",\"taxConfig\":{\"includeTax\":true,\"showIncludeTax\":true,\"showBothPrices\":false,\"defaultTax\":20,\"currentTax\":20,\"inclTaxTitle\":\"Incl. Tax\"}}"},
+            								                                            "3739" : {"valid":true,"id":"17671","title":"Dubarry Aruba two-eye deck shoe","summary":"Dubarry\u2019s Aruba two-eye tie women\u2019s deck shoe, is a hand sewn moccasin for women. This classic leather moccasin featu...","configurable":true,"url":"https:\/\/www.dubarryboots.com\/dubarry-aruba-two-eye-deck-shoe","action":"https:\/\/www.dubarryboots.com\/checkout\/cart\/add\/uenc\/aHR0cHM6Ly93d3cuZHViYXJyeWJvb3RzLmNvbS8,\/product\/17671\/form_key\/uuYycLuz6QMmHxSc\/","pricejson":"{\"priceFormat\":{\"pattern\":\"\\u00a3%s\",\"precision\":2,\"requiredPrecision\":2,\"decimalSymbol\":\".\",\"groupSymbol\":\",\",\"groupLength\":3,\"integerRequired\":1},\"includeTax\":\"true\",\"showIncludeTax\":true,\"showBothPrices\":false,\"idSuffix\":\"_clone\",\"oldPlusDisposition\":0,\"plusDisposition\":0,\"plusDispositionTax\":0,\"oldMinusDisposition\":0,\"minusDisposition\":0,\"productId\":\"17671\",\"productPrice\":99,\"productOldPrice\":99,\"priceInclTax\":99,\"priceExclTax\":99,\"skipCalculate\":1,\"defaultTax\":20,\"currentTax\":20,\"tierPrices\":[],\"tierPricesInclTax\":[],\"swatchPrices\":null}","gallery":["https:\/\/www.dubarryboots.com\/media\/catalog\/product\/cache\/1\/lifestyle_image\/750x1000\/9df78eab33525d08d6e5fb8d27136e95\/3\/7\/3739-14-aruba-new_10.jpg","https:\/\/www.dubarryboots.com\/media\/catalog\/product\/cache\/1\/image\/750x1000\/9df78eab33525d08d6e5fb8d27136e95\/3\/7\/3739-20-aruba-new_8.jpg","https:\/\/www.dubarryboots.com\/media\/catalog\/product\/cache\/1\/image\/750x1000\/9df78eab33525d08d6e5fb8d27136e95\/3\/7\/3739-18-aruba-new.jpg","https:\/\/www.dubarryboots.com\/media\/catalog\/product\/cache\/1\/image\/750x1000\/9df78eab33525d08d6e5fb8d27136e95\/3\/7\/3739-63-aruba-new_8.jpg","https:\/\/www.dubarryboots.com\/media\/catalog\/product\/cache\/1\/image\/750x1000\/9df78eab33525d08d6e5fb8d27136e95\/3\/7\/3739-24-aruba_01_1_.jpg"],"colourData":"{\"105\":{\"main\":\"https:\\\/\\\/www.dubarryboots.com\\\/media\\\/catalog\\\/product\\\/cache\\\/1\\\/image\\\/750x1000\\\/9df78eab33525d08d6e5fb8d27136e95\\\/3\\\/7\\\/3739-63-aruba-new_7.jpg\",\"zoomed\":\"https:\\\/\\\/www.dubarryboots.com\\\/media\\\/catalog\\\/product\\\/cache\\\/1\\\/image\\\/900x1200\\\/9df78eab33525d08d6e5fb8d27136e95\\\/3\\\/7\\\/3739-63-aruba-new_7.jpg\"},\"101\":{\"main\":\"https:\\\/\\\/www.dubarryboots.com\\\/media\\\/catalog\\\/product\\\/cache\\\/1\\\/image\\\/750x1000\\\/9df78eab33525d08d6e5fb8d27136e95\\\/3\\\/7\\\/3739-14-aruba-new_1.jpg\",\"zoomed\":\"https:\\\/\\\/www.dubarryboots.com\\\/media\\\/catalog\\\/product\\\/cache\\\/1\\\/image\\\/900x1200\\\/9df78eab33525d08d6e5fb8d27136e95\\\/3\\\/7\\\/3739-14-aruba-new_1.jpg\"},\"83\":{\"main\":\"https:\\\/\\\/www.dubarryboots.com\\\/media\\\/catalog\\\/product\\\/cache\\\/1\\\/image\\\/750x1000\\\/9df78eab33525d08d6e5fb8d27136e95\\\/3\\\/7\\\/3739-18-aruba-new_16.jpg\",\"zoomed\":\"https:\\\/\\\/www.dubarryboots.com\\\/media\\\/catalog\\\/product\\\/cache\\\/1\\\/image\\\/900x1200\\\/9df78eab33525d08d6e5fb8d27136e95\\\/3\\\/7\\\/3739-18-aruba-new_16.jpg\"},\"208\":{\"main\":\"https:\\\/\\\/www.dubarryboots.com\\\/media\\\/catalog\\\/product\\\/cache\\\/1\\\/image\\\/750x1000\\\/9df78eab33525d08d6e5fb8d27136e95\\\/3\\\/7\\\/3739-20-aruba-new_7.jpg\",\"zoomed\":\"https:\\\/\\\/www.dubarryboots.com\\\/media\\\/catalog\\\/product\\\/cache\\\/1\\\/image\\\/900x1200\\\/9df78eab33525d08d6e5fb8d27136e95\\\/3\\\/7\\\/3739-20-aruba-new_7.jpg\"},\"476\":{\"main\":\"https:\\\/\\\/www.dubarryboots.com\\\/media\\\/catalog\\\/product\\\/cache\\\/1\\\/image\\\/750x1000\\\/9df78eab33525d08d6e5fb8d27136e95\\\/3\\\/7\\\/3739-24-aruba_01.jpg\",\"zoomed\":\"https:\\\/\\\/www.dubarryboots.com\\\/media\\\/catalog\\\/product\\\/cache\\\/1\\\/image\\\/900x1200\\\/9df78eab33525d08d6e5fb8d27136e95\\\/3\\\/7\\\/3739-24-aruba_01.jpg\"},\"478\":{\"main\":\"https:\\\/\\\/www.dubarryboots.com\\\/media\\\/catalog\\\/product\\\/cache\\\/1\\\/image\\\/750x1000\\\/9df78eab33525d08d6e5fb8d27136e95\\\/3\\\/7\\\/3739-58-aruba_01.jpg\",\"zoomed\":\"https:\\\/\\\/www.dubarryboots.com\\\/media\\\/catalog\\\/product\\\/cache\\\/1\\\/image\\\/900x1200\\\/9df78eab33525d08d6e5fb8d27136e95\\\/3\\\/7\\\/3739-58-aruba_01.jpg\"}}","attributes":[{"id":"2795","label":"Colour","use_default":"0","position":"0","values":[{"product_super_attribute_id":"2795","value_index":"208","label":"Beige","default_label":"Beige","store_label":"Beige","is_percent":0,"pricing_value":null,"use_default_value":true,"order":10},{"product_super_attribute_id":"2795","value_index":"101","label":"Coral","default_label":"Coral","store_label":"Coral","is_percent":0,"pricing_value":null,"use_default_value":true,"order":64},{"product_super_attribute_id":"2795","value_index":"105","label":"Denim","default_label":"Denim","store_label":"Denim","is_percent":0,"pricing_value":null,"use_default_value":true,"order":73},{"product_super_attribute_id":"2795","value_index":"478","label":"Royal Blue","default_label":"Royal Blue","store_label":"Royal Blue","is_percent":0,"pricing_value":null,"use_default_value":true,"order":229},{"product_super_attribute_id":"2795","value_index":"476","label":"Sunflower","default_label":"Sunflower","store_label":"Sunflower","is_percent":0,"pricing_value":null,"use_default_value":true,"order":253},{"product_super_attribute_id":"2795","value_index":"83","label":"Cafe","default_label":"Cafe","store_label":"Cafe","is_percent":0,"pricing_value":null,"use_default_value":true,"order":291}],"attribute_id":"130","attribute_code":"colorswatch_color","frontend_label":"Colour","store_label":"Colour"},{"id":"2796","label":"Sizes","use_default":"0","position":"1","values":[{"product_super_attribute_id":"2796","value_index":"43","label":"Euro 35","default_label":"Euro 35","store_label":"Euro 35","is_percent":0,"pricing_value":null,"use_default_value":true,"order":343},{"product_super_attribute_id":"2796","value_index":"44","label":"Euro 36","default_label":"Euro 36","store_label":"Euro 36","is_percent":0,"pricing_value":null,"use_default_value":true,"order":371},{"product_super_attribute_id":"2796","value_index":"45","label":"Euro 37","default_label":"Euro 37","store_label":"Euro 37","is_percent":0,"pricing_value":null,"use_default_value":true,"order":372},{"product_super_attribute_id":"2796","value_index":"46","label":"Euro 38","default_label":"Euro 38","store_label":"Euro 38","is_percent":0,"pricing_value":null,"use_default_value":true,"order":373},{"product_super_attribute_id":"2796","value_index":"47","label":"Euro 39","default_label":"Euro 39","store_label":"Euro 39","is_percent":0,"pricing_value":null,"use_default_value":true,"order":374},{"product_super_attribute_id":"2796","value_index":"48","label":"Euro 40","default_label":"Euro 40","store_label":"Euro 40","is_percent":0,"pricing_value":null,"use_default_value":true,"order":375},{"product_super_attribute_id":"2796","value_index":"49","label":"Euro 41","default_label":"Euro 41","store_label":"Euro 41","is_percent":0,"pricing_value":null,"use_default_value":true,"order":376},{"product_super_attribute_id":"2796","value_index":"50","label":"Euro 42","default_label":"Euro 42","store_label":"Euro 42","is_percent":0,"pricing_value":null,"use_default_value":true,"order":377}],"attribute_id":"129","attribute_code":"dubarry_sizes","frontend_label":"Sizes","store_label":"Sizes"}],"configjson":"{\"attributes\":{\"130\":{\"id\":\"130\",\"code\":\"colorswatch_color\",\"label\":\"Colour\",\"options\":[{\"id\":\"208\",\"label\":\"Beige\",\"price\":\"0\",\"oldPrice\":\"0\",\"option_position\":null,\"order\":10,\"products\":[\"17705\",\"17706\",\"17707\",\"17708\",\"17709\",\"17710\",\"17711\"]},{\"id\":\"101\",\"label\":\"Coral\",\"price\":\"0\",\"oldPrice\":\"0\",\"option_position\":null,\"order\":64,\"products\":[\"17689\",\"17690\",\"17691\",\"17692\",\"17693\",\"17694\",\"17695\"]},{\"id\":\"105\",\"label\":\"Denim\",\"price\":\"0\",\"oldPrice\":\"0\",\"option_position\":null,\"order\":73,\"products\":[\"17681\",\"17682\",\"17683\",\"17684\",\"17685\",\"17686\",\"17687\"]},{\"id\":\"478\",\"label\":\"Royal Blue\",\"price\":\"0\",\"oldPrice\":\"0\",\"option_position\":null,\"order\":229,\"products\":[\"20987\",\"20988\",\"20989\",\"20990\",\"20991\",\"20992\",\"20993\"]},{\"id\":\"476\",\"label\":\"Sunflower\",\"price\":\"0\",\"oldPrice\":\"0\",\"option_position\":null,\"order\":253,\"products\":[\"20980\",\"20981\",\"20982\",\"20983\",\"20984\",\"20985\"]},{\"id\":\"83\",\"label\":\"Cafe\",\"price\":\"0\",\"oldPrice\":\"0\",\"option_position\":null,\"order\":291,\"products\":[\"17697\",\"17698\",\"17699\",\"17700\",\"17701\",\"17702\",\"17703\"]}]},\"129\":{\"id\":\"129\",\"code\":\"dubarry_sizes\",\"label\":\"Sizes\",\"options\":[{\"id\":\"43\",\"label\":\"Euro 35\",\"price\":\"0\",\"oldPrice\":\"0\",\"option_position\":null,\"order\":343,\"products\":[]},{\"id\":\"44\",\"label\":\"Euro 36\",\"price\":\"0\",\"oldPrice\":\"0\",\"option_position\":null,\"order\":371,\"products\":[\"17681\",\"17689\",\"17697\",\"17705\",\"20987\"]},{\"id\":\"45\",\"label\":\"Euro 37\",\"price\":\"0\",\"oldPrice\":\"0\",\"option_position\":null,\"order\":372,\"products\":[\"17682\",\"17690\",\"17698\",\"17706\",\"20980\",\"20988\"]},{\"id\":\"46\",\"label\":\"Euro 38\",\"price\":\"0\",\"oldPrice\":\"0\",\"option_position\":null,\"order\":373,\"products\":[\"17683\",\"17691\",\"17699\",\"17707\",\"20981\",\"20989\"]},{\"id\":\"47\",\"label\":\"Euro 39\",\"price\":\"0\",\"oldPrice\":\"0\",\"option_position\":null,\"order\":374,\"products\":[\"17684\",\"17692\",\"17700\",\"17708\",\"20982\",\"20990\"]},{\"id\":\"48\",\"label\":\"Euro 40\",\"price\":\"0\",\"oldPrice\":\"0\",\"option_position\":null,\"order\":375,\"products\":[\"17685\",\"17693\",\"17701\",\"17709\",\"20983\",\"20991\"]},{\"id\":\"49\",\"label\":\"Euro 41\",\"price\":\"0\",\"oldPrice\":\"0\",\"option_position\":null,\"order\":376,\"products\":[\"17686\",\"17694\",\"17702\",\"17710\",\"20984\",\"20992\"]},{\"id\":\"50\",\"label\":\"Euro 42\",\"price\":\"0\",\"oldPrice\":\"0\",\"option_position\":null,\"order\":377,\"products\":[\"17687\",\"17695\",\"17703\",\"17711\",\"20985\",\"20993\"]}]}},\"template\":\"\\u00a3#{price}\",\"basePrice\":\"99\",\"oldPrice\":\"99\",\"productId\":\"17671\",\"chooseText\":\"Choose an Option...\",\"taxConfig\":{\"includeTax\":true,\"showIncludeTax\":true,\"showBothPrices\":false,\"defaultTax\":20,\"currentTax\":20,\"inclTaxTitle\":\"Incl. Tax\"}}"},
+            				}
+</script>
+<div class="video">
+	<video loop id="home-video" poster="assets/img/DubarryBootcare.jpg">
+		<source src="/media/video/DubarryBootcare.mp4" type='video/mp4' />
+	</video>
+	<div class="text">
+		<h4>Care and Attention</h4>
+		<p>Even the best need a little looking after and our Care Guides show you how.</p>
+		<div class="controls">
+			<a class="more" href="https://www.dubarryboots.com/footwear-care/leather-care">Find Out More</a>
+			<a href="#" class="playback">
+				<i class="fa fa-play"></i>
+				<i class="fa fa-pause"></i>
+			</a>
+			<a href="#" class="sound">
+				<i class="fa fa-volume-off"></i>
+				<i class="fa fa-volume-up"></i>
+			</a>
+		</div>
+	</div>
+</div>
+<div class="homepage-panels">
+		<div class="homepage-panel full">
+					<img class="lazyload" src="https://www.dubarryboots.com/skin/frontend/dubarry/default/images/lazyload-panel.png" data-src="https://www.dubarryboots.com/media/panels/image/9fa88bf03f89c56afe5c986157bb1852.jpg" />
+				<div class="text bottom left">
+			<h3>Sailing Boots</h3>
+			<p>Shop the latest selection of Dubarry Sailing boots.</p>
+			<a href="https://www.dubarryboots.com/mens-footwear/sailing-boots">SHOP NOW</a>
+		</div>
+	</div>
+		<div class="homepage-panel full">
+					<img class="lazyload" src="https://www.dubarryboots.com/skin/frontend/dubarry/default/images/lazyload-panel.png" data-src="https://www.dubarryboots.com/media/panels/image/7e3ada0f60da714c34459d851b48140e.jpg" />
+				<div class="text bottom right">
+			<h3>Women's SS19 Collection</h3>
+			<p>Shop women's cottons, shirts, summer dresses, lightweight jackets, gilets and shorts</p>
+			<a href="/womens-clothing">Shop Now</a>
+		</div>
+	</div>
+		<div class="homepage-panel full">
+					<img class="lazyload" src="https://www.dubarryboots.com/skin/frontend/dubarry/default/images/lazyload-panel.png" data-src="https://www.dubarryboots.com/media/panels/image/498138452304f51be51a8308f270d948.jpg" />
+				<div class="text bottom left">
+			<h3>Men's SS19 Collection</h3>
+			<p>Shop men's new arrivals lightweight jackets, cottons, polo shirts, shirts and deck shoes. </p>
+			<a href="/mens-clothing">Shop Now</a>
+		</div>
+	</div>
+		<div class="homepage-panel full">
+					<img class="lazyload" src="https://www.dubarryboots.com/skin/frontend/dubarry/default/images/lazyload-panel.png" data-src="https://www.dubarryboots.com/media/panels/image/8afd3f8d6b4df6bd7696ba5479305169.jpg" />
+				<div class="text bottom right">
+			<h3>Bags & Accessories</h3>
+			<p>Shop the Dubarry range of exquisitely designed leather bags and accessories.</p>
+			<a href="/accessories-gifts">SHOP NOW</a>
+		</div>
+	</div>
+	</div><div class="homepage-newsletter">
+    <div class="container">
+
+        <h2>Sign Up to Mailing List</h2>
+        <hr/>
+        <p>For all the latest offers and updates from Dubarry</p>
+
+        <form action="//dubarry.us13.list-manage.com/subscribe/post?u=fccb21338b504c16595917ac1&amp;id=c0d8fc917e" class="validate" id="subForm" method="post" name="mc-embedded-subscribe-form" target="_blank">
+<p><label for="mce-EMAIL">Email Address <span class="asterisk">*</span> </label> <input class="required email" id="mce-EMAIL" name="EMAIL" type="text" value="" /></p>
+<div class="mc-field-group input-group no-display"><strong>Sign up to the Dubarry mailing list.</strong> Your personal data will be used by Dubarry of Ireland to provide you with email marketing, which you have specifically requested.To opt out, please use the unsubscribe link included in all of our marketing emails. See our <a href="https://www.dubarryboots.com/terms-conditions/privacy-policy" title="Dubarry Privacy Policy" target="_blank">Privacy Policy</a> for more details.</div>
+<div style="position: absolute; left: -5000px;"><input name="b_fccb21338b504c16595917ac1_c0d8fc917e" tabindex="-1" type="text" value="" /></div>
+<p><button type="submit">Subscribe</button></p>
+</form>
+
+        <h4>Or join us online...</h4>
+
+        <div class="social">
+                                        <a href="https://www.facebook.com/DubarryOfIreland" target="_blank">
+                    <i class="fa fa-2x fa-facebook"></i>
+                </a>
+                            <a href="https://twitter.com/Dubarry_com" target="_blank">
+                    <i class="fa fa-2x fa-twitter"></i>
+                </a>
+                            <a href="http://instagram.com/dubarryofireland" target="_blank">
+                    <i class="fa fa-2x fa-instagram"></i>
+                </a>
+                            <a href="http://www.pinterest.com/dubarryboots/" target="_blank">
+                    <i class="fa fa-2x fa-pinterest"></i>
+                </a>
+                            <a href="https://www.youtube.com/user/DubarryIreland" target="_blank">
+                    <i class="fa fa-2x fa-youtube"></i>
+                </a>
+                    </div>
+    </div>
+</div><div class="trust-callouts footer-callouts">
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-4 col-xs-6 secure">
+								                    <table style="width: 135px;" title="Click to Verify - This site chose Symantec SSL for secure e-commerce and confidential communications." border="0" cellspacing="0" cellpadding="2">
+<tbody>
+<tr>
+<td align="center" valign="top" width="135">
+<script type="text/javascript" src="https://seal.websecurity.norton.com/getseal?host_name=www.dubarryboots.com&amp;size=L&amp;use_flash=NO&amp;use_transparent=YES&amp;lang=en"></script>
+</td>
+</tr>
+</tbody>
+</table>                			</div>
+			<div class="col-sm-4 col-xs-6 shipping">
+				<a href="https://www.dubarryboots.com/help/shipping" data-check-res>
+					<h4>Free Shipping</h4>
+					<p>To the UK on all orders over <span class="price">£149</span>                    </p>
+				</a>
+			</div>
+			<div class="col-sm-4 col-xs-12 welovedubarry">
+                <a href="http://livelovedubarry.tumblr.com/" target="_blank" data-check-res>
+					<h4>#LiveLoveDubarry</h4>
+					<p>Share your Dubarry life with us</p>
+				</a>
+			</div>
+		</div>
+	</div>
+</div><a href="javascript:void(0);" class="scroll-prompt"><img src="https://www.dubarryboots.com/skin/frontend/dubarry/default/images/scroll-prompt.png" /></a>    
+    
+    
+<div class="quick-view-barrier">
+	<img src="https://www.dubarryboots.com/skin/frontend/dubarry/default/images/loader.gif" class="loader" />
+</div>
+<div class="quick-view-box">
+	<a class="quick-view-close" href="#"><img src="https://www.dubarryboots.com/skin/frontend/dubarry/default/images/close-button.png" width="40" /></a>
+    <div class="gallery">
+    	<div class="gallery-controls">
+			<a href="#" class="left"><i class="fa fa-angle-left"></i></a>
+			<a href="#" class="right"><i class="fa fa-angle-right"></i></a>
+    	</div>
+    </div>
+    <div class="info">
+    	<h4></h4>
+	    <p></p>
+	    <form method="post">
+	    	<div class="price-box">
+	    		<span class="old-price">
+	    			<span class="price-label">Was</span>
+	    			<span class="price"></span>
+	    		</span>
+	    		<span class="regular-price"><span class="price"></span></span>
+	    	</div>
+	    	<div class="product-options" id="quickview-product-options-wrapper"></div>
+	    	<div class="error">Please select an option above</div>
+	    	<div class="buttons">
+	    		<a href="#">Find Out More</a>
+	    		<input type="submit" value="Add to Bag" />
+	    	</div>
+	    </form>
+    </div>
+</div>
+<footer>
+	<div class="container">
+		<div class="footer-breadcrumbs"></div>
+		<div class="footer-links row">
+            
+    <ul class="col-sm-20">
+        <li><h4><a href="#">Terms & Conditions</a></h4></li>
+                            <li><a href="https://www.dubarryboots.com/terms-conditions/privacy-policy">Privacy Policy</a></li>
+                    <li><a href="https://www.dubarryboots.com/terms-conditions/counterfeit-education">Counterfeit Education</a></li>
+                    <li><a href="https://www.dubarryboots.com/terms-conditions/payment-methods">Payment Methods</a></li>
+                    <li><a href="https://www.dubarryboots.com/terms-conditions/copyright">Copyright</a></li>
+                    <li><a href="https://www.dubarryboots.com/terms-conditions/cookie-policy">Cookie Policy</a></li>
+            </ul>
+    <ul class="col-sm-20">
+        <li><h4><a href="#">Gift Certificates</a></h4></li>
+                            <li><a href="https://www.dubarryboots.com/gift-certificates/gift-cert-use">Gift cert use</a></li>
+                    <li><a href="https://www.dubarryboots.com/gift-certificates/buy-gift-cert">Buy Gift Cert</a></li>
+            </ul>
+    <ul class="col-sm-20">
+        <li><h4><a href="#">Buy Dubarry</a></h4></li>
+                            <li><a href="https://www.dubarryboots.com/buy-dubarry/latest-catalogue">Catalogue</a></li>
+                    <li><a href="https://www.dubarryboots.com/buy-dubarry/for-her">Gift Certificate</a></li>
+                    <li><a href="https://www.dubarryboots.com/buy-dubarry/dubarry-stores">Dubarry Stores</a></li>
+                    <li><a href="https://www.dubarryboots.com/buy-dubarry/dubarry-events">Dubarry Events</a></li>
+                    <li><a href="https://www.dubarryboots.com/buy-dubarry/where-can-i-buy-dubarry-in-the-uk">Where Can I Buy Dubarry in the UK?</a></li>
+                    <li><a href="https://www.dubarryboots.com/buy-dubarry/customer-service">Customer Service</a></li>
+            </ul>
+    <ul class="col-sm-20">
+        <li><h4><a href="#">Footwear Care</a></h4></li>
+                            <li><a href="https://www.dubarryboots.com/footwear-care/repair-dubarry-boots-shoes">Repair Dubarry Boots & Shoes</a></li>
+                    <li><a href="https://www.dubarryboots.com/footwear-care/warranty">Warranty</a></li>
+                    <li><a href="https://www.dubarryboots.com/footwear-care/leather-care">Footwear & Leather Care</a></li>
+                    <li><a href="https://www.dubarryboots.com/footwear-care/care-products">Care Products</a></li>
+                    <li><a href="https://www.dubarryboots.com/footwear-care/knot-your-dubarry-s">Knot your Dubarry Videos</a></li>
+                    <li><a href="https://www.dubarryboots.com/footwear-care/customer-service">Customer Service</a></li>
+            </ul>
+    <ul class="col-sm-20">
+        <li><h4><a href="#">About Us</a></h4></li>
+                            <li><a href="https://www.dubarryboots.com/about-us/catalogue">Catalogue</a></li>
+                    <li><a href="https://www.dubarryboots.com/about-us/dubarry-brand-history">Dubarry Brand History</a></li>
+                    <li><a href="https://www.dubarryboots.com/about-us/dubarry-boots">Footwear</a></li>
+                    <li><a href="https://www.dubarryboots.com/about-us/clothing">Clothing</a></li>
+                    <li><a href="https://www.dubarryboots.com/about-us/work-for-dubarry">Work for Dubarry</a></li>
+                    <li><a href="https://www.dubarryboots.com/about-us/customer-service">Customer Service</a></li>
+                    <li><a href="https://www.dubarryboots.com/about-us/join-our-mailing-list">Join our mailing list</a></li>
+                    <li><a href="https://www.dubarryboots.com/about-us/blog">Blog</a></li>
+            </ul>
+		</div>
+		<div class="social">
+			<h4>Connect With Us</h4>
+			<p class="social">
+                                				<a href="https://www.facebook.com/DubarryOfIreland" target="_blank">
+                    <i class="fa fa-2x fa-facebook"></i>
+                </a>
+                				<a href="https://twitter.com/Dubarry_com" target="_blank">
+                    <i class="fa fa-2x fa-twitter"></i>
+                </a>
+                				<a href="http://instagram.com/dubarryofireland" target="_blank">
+                    <i class="fa fa-2x fa-instagram"></i>
+                </a>
+                				<a href="http://www.pinterest.com/dubarryboots/" target="_blank">
+                    <i class="fa fa-2x fa-pinterest"></i>
+                </a>
+                			</p>
+		</div>
+        <address>&copy; Dubarry 2019, Dubarry of Ireland Ballinasloe, County Galway,
+            Ireland</address>
+
+        <ul class="links">
+<li class="first"><a title="Terms &amp; Conditions" href="https://www.dubarryboots.com/terms-conditions">Terms &amp; Conditions</a></li>
+<li><a title="Privacy Policy" href="/terms-conditions/privacy-policy">Privacy Policy</a></li>
+<li><a title="Counterfeit Education" href="https://www.dubarryboots.com/terms-conditions/counterfeit-education">Counterfeit Education</a></li>
+<li><a title="Secure Online Shopping" href="http://www.dubarry.us/customer-service/payments">Secure Online Shopping</a></li>
+<li class=" last"><a title="Site Map" href="https://www.dubarryboots.com/sitemap">Site Map</a></li>
+</ul>
+		<a class="quick-browse-btn hidden-xs" href="javascript: void(0);">
+			Quick Browse
+			<i class="fa fa-caret-down"></i>
+			<i class="fa fa-caret-up"></i>
+		</a>
+
+		<address style="width: 100%">
+					</address>
+	</div>
+</footer>
+
+<div class="quick-browse hidden-xs">
+	<div class="container">
+		<div class="row">
+					</div>
+	</div>
+</div>    
+
+<script>
+
+	if ('undefined' !== typeof jQuery && 'undefined' !== typeof dataLayer)
+	{
+		(function($, dataLayer)
+		{
+			var events = 
+			{
+				addToCart: function()
+				{
+					
+					AEC.ajax(this, dataLayer);
+					
+										
+				},
+				addToCartList: function()
+				{
+					
+					AEC.ajaxList(this, dataLayer);
+					
+										
+				},
+				removeFromCart: function()
+				{
+					
+					AEC.remove(this, dataLayer);
+					
+										
+				},
+				productClick: function()
+				{
+					
+					AEC.click(this, dataLayer);
+					
+										
+				},
+				addToWishlist: function()
+				{
+					
+					AEC.wishlist(this, dataLayer);
+					
+										
+				},
+				addToCartWishlist: function()
+				{
+					
+					AEC.ajaxList(this, dataLayer);
+					
+									},
+				addToCompare: function()
+				{
+					
+					AEC.compare(this, dataLayer);
+					
+										
+				}
+			};
+
+			var b = function(events)
+			{
+				$.each(events, function(event, callback)
+				{
+					var elements = $('[data-event]').filter(function()
+					{
+						return $(this).data('event') == event;
+					});
+
+					elements.each(function()
+					{
+						$(this).off('click.ec').on('click.ec', callback);
+					});
+				});
+			};
+
+						
+			b(events);
+
+						
+			(function(events)
+			{
+				$(document).ajaxComplete(function( event, request, settings ) 
+				{
+					b(events);
+				});
+			})(events);
+			
+		})(jQuery, dataLayer);
+	}
+</script><script>
+
+	if (typeof dataLayer !== "undefined")
+	{
+		
+					
+		
+					
+			
+		for (a = 0, b = EC.length; a < b; a++)
+		{
+			EC[a].apply(this,[dataLayer]);
+			EC[a].apply(this,[dataLayerTransport]);
+		}
+
+		/**
+		 * Check if GTM is not blocked by Ad-Blocker
+		 */
+		if ('undefined' !== typeof jQuery)
+		{
+			jQuery(window).on(
+			{
+				load: function()
+				{
+					if (!AEC.gtm())
+					{
+												
+						console.log('Google Tag Manager may be blocked by Ad-Blocker or not included in page');
+					}
+				}
+			});
+		}
+
+		/* AdWords Remarketing */
+		if (window.google_tag_params)
+		{
+			(function(callback)
+			{
+				if (AEC.CookieConsent.support)
+				{
+					AEC.CookieConsent.queue(callback).process();
+				}
+				else 
+				{
+					callback.apply(window,[]);
+				}
+				
+			})((function(dataLayer, google_tag_params)
+			{
+				return function()
+				{
+					dataLayer.push(
+					{  
+						'event':				'fireRemarketingTag',
+						'google_tag_params': 	google_tag_params
+					});
+				}
+			})(dataLayer, window.google_tag_params));
+		}
+
+		if (typeof FB !== 'undefined') 
+		{
+			FB.Event.subscribe('edge.create',function(href) 
+		 	{
+				dataLayer.push(
+				{
+					'event': 			'socialInt',
+					'socialNetwork': 	'Facebook',
+					'socialAction': 	'Like',
+					'socialTarget': 	href
+				});
+			});
+		}
+
+		window.sendPlus = function(g)
+		{
+		    dataLayer.push(
+			{
+		        'event': 			'socialInt',
+		        'socialNetwork': 	'Google',
+		        'socialAction': 	'+1',
+		        'socialTarget': 	g.href
+		    });
+		};
+
+		if (typeof twttr !== 'undefined') 
+		{
+			twttr.ready(function (twttr) 
+			{
+				twttr.events.bind('click', function()
+				{
+					dataLayer.push(
+					{
+						'event': 			'socialInt',
+						'socialNetwork': 	'Twitter',
+						'socialAction': 	'tweet',
+						'socialTarget': 	window.location.href
+					});
+				}); 
+			});
+		}
+	}
+	else
+	{
+		console.log('dataLayer[] is not intialized. Check if GTM is installed properly');
+	}
+	
+</script>        <!-- Google Analytics Part 2/2 -->
+    <script>
+        ga('send', 'pageview', '');
+            </script>
+
+        <!-- End Google Analytics Part 2/2 -->
+
+    <!-- <div id="cookienotice-container" class="cookienotice-container cookienotice-bar cookienotice-bar-bottom">
+        Content
+        <div class="cookienotice-content">
+            Message
+                            <div class="cookienotice-message">
+                    This website requires cookies to provide all of its features, to personalise content and ads, to provide social media features and to analyse our traffic. We also share information about your use of our site with our social media, advertising and analytics partners who may combine it with other information that they’ve collected from your use of their services. For more information, please see our Cookie Policy page.                    <a title="Accept" class="cookienotice-page-link" href="https://www.dubarryboots.com/terms-conditions/privacy-policy">Accept</a>
+                </div>
+                        Close Button
+                            <div class="cookienotice-button-container">
+                    <a title="Close" id="cookienotice-close-button" class="cookienotice-button">Accept</a>
+                </div>
+                    </div>
+    </div>
+    
+    
+        <script type="text/javascript">
+    
+        /**
+         * Cookie Set : Notice has been shown
+         */
+        createCookie('ow_cookie_notice', 'shown', 31);
+    
+                /**
+             * Clicking the close button removes the notice
+             */
+            $('cookienotice-close-button').observe('click', function(event) {
+                $('cookienotice-container').remove();
+                /**
+                 * Cookie Set : Notice has been closed
+                 */
+                createCookie('ow_cookie_notice', 'closed', 31);
+                    });
+    
+    
+    
+        /**
+         * Cookie Set JS Function
+         */
+        function createCookie(name, value, days) {
+            if (days) {
+                var date = new Date();
+                date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+                var expires = "; expires=" + date.toGMTString();
+            } else {
+                var expires = "";
+            }
+            document.cookie = name + "=" + value + expires + "; path=/";
+        }
+    </script> -->
+
+<script type="text/javascript">
+    function initAjaxLayeredNavigationSliders() {
+        jQuery('.ajaxlayerednavigation-sliders').each(function() {
+            var prices = jQuery(this).val(),
+                priceData = prices.split(';'),
+                from = priceData[0],
+                to = priceData[1],
+                prefixSymbol = '',
+                postfixSymbol = '',
+                id = jQuery(this).attr('id'),
+                requestVar = id.substr(22);
+            if ('price' == requestVar) {
+                prefixSymbol = '£';
+                postfixSymbol = '';
+            }
+            ajaxlayerednavigation.slidersValues[requestVar] = prices;
+            min = priceData[0];
+            max = priceData[1];
+            jQuery("#" + id).ionRangeSlider({
+                min: parseInt(min),
+                max: parseInt(max),
+                from: parseInt(from),
+                to: parseInt(to),
+                type: "double",
+                step: 1,
+                prefix: prefixSymbol,
+                postfix: postfixSymbol,
+                prettify: true,
+                grid: true,
+                onFinish: function(obj) {
+                    var isAjax     = '0';
+                    var isAdvanced = '';
+                    var currentUrl = jQuery(location).attr('href');
+                    if ('1' == isAjax && !isAdvanced) {
+                        updateUrlHash(jQuery(obj.input[0]).attr('data-var'), obj.from, obj.to);
+                        ajaxlayerednavigation.checkUrlHash();
+                    } else if(isAdvanced){
+                        var url = updateAdvancedURLParameter(window.location.href, jQuery(obj.input[0]).attr('data-var'), obj.from + ',' + obj.to);
+                        window.location.href = url;
+                    } else {
+                        var url = updateURLParameter(window.location.href, jQuery(obj.input[0]).attr('data-var'), obj.from + ',' + obj.to);
+                        window.location.href = url;
+                    }
+                }
+            });
+        });
+     }
+    Event.observe(window, 'load', function() { //KB927917 fix
+        initAjaxLayeredNavigationSliders();
+    });
+
+    function updateAjaxLayeredSliders(){
+        jQuery('.ajaxlayerednavigation-sliders').each(function() {
+            var prices = jQuery(this).val(),
+                priceData = prices.split(';'),
+                from = parseInt(priceData[0]),
+                to = parseInt(priceData[1]),
+                prefixSymbol = '',
+                postfixSymbol = '',
+                id = jQuery(this).attr('id'),
+                requestVar = id.substr(22);
+
+            if ('price' == requestVar) {
+                prefixSymbol = '£';
+                postfixSymbol = '';
+            }
+            var maxMin = ajaxlayerednavigation.slidersValues[requestVar],
+                maxPriceData = "",
+                minValue = 0,
+                maxValue = 0;
+            if (!maxMin) {
+                minValue = from;
+                maxValue = to;
+            } else {
+                maxPriceData = maxMin.split(';');
+                minValue = maxPriceData[0];
+                maxValue = maxPriceData[1];
+            }
+
+            jQuery(this).val(maxMin);
+
+            var slider = jQuery("#" + id).ionRangeSlider({
+                min: parseInt(minValue),
+                max: parseInt(maxValue),
+                from: parseInt(from),
+                to: parseInt(to),
+                type: "double",
+                step: 1,
+                prefix: prefixSymbol,
+                postfix: postfixSymbol,
+                prettify: true,
+                grid: true,
+                onFinish: function(obj) {
+                    var isAjax     = '0';
+                    var currentUrl = jQuery(location).attr('href');
+                    if ('1' == isAjax) {
+                        updateUrlHash(jQuery(obj.input[0]).attr('data-var'), obj.from, obj.to);
+                        ajaxlayerednavigation.checkUrlHash();
+                    } else if(isAdvanced){
+                        var url = updateAdvancedURLParameter(window.location.href, jQuery(obj.input[0]).attr('data-var'), obj.from + ',' + obj.to);
+                        window.location.href = url;
+                    } else {
+                        var url = updateURLParameter(window.location.href, jQuery(obj.input[0]).attr('data-var'), obj.from + ',' + obj.to);
+                        window.location.href = url;
+                    }
+                }
+            });
+        });
+    }
+
+    function updateURLParameter(url, param, paramVal) {
+        var newAdditionalURL = "";
+        var tempArray = url.split("?");
+        var baseURL = tempArray[0];
+        var additionalURL = tempArray[1];
+        var temp = "";
+        if (additionalURL) {
+            tempArray = additionalURL.split("&");
+            for (i=0; i<tempArray.length; i++){
+                if(tempArray[i].split('=')[0] != param){
+                    newAdditionalURL += temp + tempArray[i];
+                    temp = "&";
+                }
+            }
+        }
+
+        var rows_txt = temp + "" + param + "=" + paramVal;
+        return baseURL + "?" + newAdditionalURL + rows_txt;
+    }
+
+    function updateAdvancedURLParameter(url, param, paramVal) {
+        if (ajaxlayerednavigation.home && ajaxlayerednavigation.seoUrls) {
+            if (ajaxlayerednavigation.useAjax) {
+                window.location = ajaxlayerednavigation.seoCat + ajaxlayerednavigation.seoSuffix + '#' + requestVar + '=' + from + ',' + to;
+            } else {
+                window.location = ajaxlayerednavigation.seoCat + ajaxlayerednavigation.seoSuffix + '?' + requestVar + '=' + from + ',' + to;
+            }
+            return false;
+        } else if (ajaxlayerednavigation.home){
+            if (ajaxlayerednavigation.useAjax) {
+                window.location = this.categoryUrl + '#' + requestVar + '=' + from + ',' + to;
+            } else {
+                window.location = this.categoryUrl + '?' + requestVar + '=' + from + ',' + to;
+            }
+            return false;
+        }
+
+        url = decodeURIComponent(url);
+        var newAdditionalURL = "";
+        var tempArray = url.split("?");
+        var baseURL = tempArray[0];
+        var additionalURL = tempArray[1];
+        var temp = "";
+        if (additionalURL) {
+            tempArray = additionalURL.split("&");
+            for (i=0; i<tempArray.length; i++){
+                if(tempArray[i].split('=')[0] != param+'[from]' && tempArray[i].split('=')[0] != param+'[to]'){
+                    newAdditionalURL += temp + tempArray[i];
+                    temp = "&";
+                }
+            }
+        }
+        var params = paramVal.split(',');
+        var rows_txt = temp + "" + param + '[from]' + "=" + params[0];
+        rows_txt += temp + "" + param + '[to]' + "=" + params[1];
+        return baseURL + "?" + newAdditionalURL + rows_txt;
+    }
+
+    function updateUrlHash(requestVar, from, to) {
+        var hash = location.hash,
+            newHash = '#',
+            hashParams = [],
+            i = 0
+            hashLenght = 0;
+        if (-1 != hash.indexOf(requestVar + "=")) {
+            hash = hash.substr(1, hash.length);
+            hashParams = hash.split('&');
+            hashLenght = hashParams.length;
+
+            hashParams.each(function(param){
+                if (-1 !== param.indexOf(requestVar)) {
+                    newHash += requestVar + '=' + from + ',' + to;
+                } else {
+                   newHash += param;
+                }
+                i++;
+
+                if (i != hashLenght) { newHash += "&"; }
+            });
+
+            window.location.hash = newHash;
+        } else {
+            if (ajaxlayerednavigation.home && ajaxlayerednavigation.seoUrls) {
+                if (ajaxlayerednavigation.useAjax) {
+                    window.location = ajaxlayerednavigation.seoCat + ajaxlayerednavigation.seoSuffix + '#' + requestVar + '=' + from + ',' + to;
+                } else {
+                    window.location = ajaxlayerednavigation.seoCat + ajaxlayerednavigation.seoSuffix + '?' + requestVar + '=' + from + ',' + to;
+                }
+            } else {
+                if (hash.length > 1) {
+                    window.location.hash = hash + '&' + requestVar + '=' + from + ',' + to;
+                } else {
+                    window.location.hash = requestVar + '=' + from + ',' + to;
+                }
+            }
+
+        }
+    }
+</script>
+
+<script type="text/javascript" src="//downloads.mailchimp.com/js/signup-forms/popup/embed.js"
+        data-dojo-config="usePlainJson: true, isDebug: false"></script>
+<script type="text/javascript">require(["mojo/signup-forms/Loader"], function (L) {
+        L.start({"baseUrl": "mc.us13.list-manage.com", "uuid": "fccb21338b504c16595917ac1", "lid": ""})
+    })</script>
+    
+<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"dae8a657f1","applicationID":"238759917","transactionName":"MVdVMhZYWBJWUEVaWAgddgUQUFkPGFBcQBgPXFMDHBZfD1NWSQ==","queueTime":0,"applicationTime":146,"atts":"HRBWRF5CSxw=","errorBeacon":"bam.nr-data.net","agent":""}</script>
+</body>
+</html>
